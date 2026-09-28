@@ -5,64 +5,60 @@
 [ext_resource type="Texture2D" uid="uid://iscf1p6ady1i" path="res://sprites/2 - Lil Wiz/Running_(32 x 32).png" id="3_e4p34"]
 [ext_resource type="Texture2D" uid="uid://dv3o4c0yommf7" path="res://sprites/2 - Lil Wiz/Jumping_(32 x 32).png" id="3_rfe5m"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0i88t"]
-radius = 8.0
-height = 26.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4p34"]
-atlas = ExtResource("2_b0kkn")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33cqm"]
+size = Vector2(12, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfe5m"]
 atlas = ExtResource("2_b0kkn")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(0, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qly61"]
 atlas = ExtResource("2_b0kkn")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(32, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qsoyl"]
 atlas = ExtResource("2_b0kkn")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(64, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6nm46"]
 atlas = ExtResource("2_b0kkn")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0i8f"]
-atlas = ExtResource("3_rfe5m")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(96, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i623q"]
-atlas = ExtResource("3_e4p34")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("2_b0kkn")
+region = Rect2(128, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ef06p"]
-atlas = ExtResource("3_e4p34")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("3_rfe5m")
+region = Rect2(0, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjdhl"]
 atlas = ExtResource("3_e4p34")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(0, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x08pd"]
 atlas = ExtResource("3_e4p34")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(32, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dchgp"]
 atlas = ExtResource("3_e4p34")
-region = Rect2(128, 0, 32, 32)
+region = Rect2(64, 4, 32, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdgjc"]
 atlas = ExtResource("3_e4p34")
-region = Rect2(160, 0, 32, 32)
+region = Rect2(96, 4, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0i8f"]
+atlas = ExtResource("3_e4p34")
+region = Rect2(128, 4, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i614"]
+atlas = ExtResource("3_e4p34")
+region = Rect2(160, 4, 32, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4p34")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rfe5m")
 }, {
@@ -74,6 +70,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6nm46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i623q")
 }],
 "loop": 1,
 "name": &"idle",
@@ -81,19 +80,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q0i8f")
+"texture": SubResource("AtlasTexture_ef06p")
 }],
 "loop": 1,
 "name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i623q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ef06p")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tjdhl")
 }, {
@@ -105,6 +98,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kdgjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0i8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i614")
 }],
 "loop": 1,
 "name": &"walk",
@@ -115,11 +114,22 @@ animations = [{
 script = ExtResource("1_merdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502368429]
-shape = SubResource("CapsuleShape2D_0i88t")
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_33cqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2085022490]
-position = Vector2(1.1368684e-13, 0)
+z_index = 1
+position = Vector2(2.4074124e-35, 0)
 scale = Vector2(0.834961, 0.9589843)
 sprite_frames = SubResource("SpriteFrames_0i88t")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
+frame = 1
+frame_progress = 0.77969915
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=283830840]
+limit_left = 0
+limit_top = 0
+limit_bottom = 200
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
