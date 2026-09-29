@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cfm7q14iphn6m" path="res://sprites/1 - Grassland/Background parts/2 - Hills.png" id="6_jo4av"]
 [ext_resource type="Texture2D" uid="uid://cubjfmyx7woy6" path="res://sprites/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="7_jxvlp"]
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_fk3cu"]
+tile_data = PackedInt32Array(0, 65541, 3, 1, 131077, 3, 2, 131077, 3, 3, 131077, 3, 4, 458757, 3)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbfvw"]
 texture = ExtResource("2_2xpkg")
 3:1/0 = 0
@@ -71,6 +74,7 @@ texture = ExtResource("2_2xpkg")
 [sub_resource type="TileSet" id="TileSet_0i88t"]
 physics_layer_0/collision_layer = 1
 sources/5 = SubResource("TileSetAtlasSource_gbfvw")
+pattern_0 = SubResource("TileMapPattern_fk3cu")
 
 [node name="Forest" type="Node2D" unique_id=869091353]
 
@@ -85,7 +89,7 @@ tile_set = SubResource("TileSet_0i88t")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=430009670]
 
 [node name="5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1141735314]
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.1, 0.05)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/5" unique_id=963261696]
@@ -93,21 +97,22 @@ texture_repeat = 2
 texture = ExtResource("3_gbfvw")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 288, 208)
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2115790188]
-motion_scale = Vector2(0.2, 0.2)
+motion_scale = Vector2(0.2, 0.1)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/4" unique_id=517218353]
 texture_repeat = 2
+position = Vector2(0, 1)
 texture = ExtResource("4_fk3cu")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 288, 208)
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1550517068]
-motion_scale = Vector2(0.3, 0.3)
+motion_scale = Vector2(0.3, 0.15)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3" unique_id=886142410]
@@ -116,10 +121,10 @@ scale = Vector2(0.9965278, 1)
 texture = ExtResource("5_qxlj4")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 288, 208)
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1537750918]
-motion_scale = Vector2(0.4, 0.4)
+motion_scale = Vector2(0.4, 0.2)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2" unique_id=550613755]
@@ -127,10 +132,10 @@ texture_repeat = 2
 texture = ExtResource("6_jo4av")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 288, 208)
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=87096332]
-motion_scale = Vector2(0.8, 0.8)
+motion_scale = Vector2(0.8, 0.4)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1" unique_id=940788127]
@@ -138,4 +143,4 @@ texture_repeat = 2
 texture = ExtResource("7_jxvlp")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 288, 208)
+region_rect = Rect2(0, 0, 576, 208)

@@ -59,11 +59,17 @@ texture = ExtResource("2_rp5iu")
 14:6/0 = 0
 15:6/0 = 0
 18:6/0 = 0
+18:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:6/0 = 0
+19:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:6/0 = 0
+20:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:6/0 = 0
+21:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 22:6/0 = 0
+22:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:6/0 = 0
+23:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:6/0 = 0
 27:6/0 = 0
 28:6/0 = 0
@@ -89,11 +95,17 @@ texture = ExtResource("2_rp5iu")
 14:7/0 = 0
 15:7/0 = 0
 18:7/0 = 0
+18:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:7/0 = 0
+19:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:7/0 = 0
+20:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:7/0 = 0
+21:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 22:7/0 = 0
+22:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:7/0 = 0
+23:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:7/0 = 0
 27:7/0 = 0
 28:7/0 = 0
@@ -107,7 +119,9 @@ texture = ExtResource("2_rp5iu")
 12:8/0 = 0
 13:8/0 = 0
 20:8/0 = 0
+20:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:8/0 = 0
+21:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 28:8/0 = 0
 29:8/0 = 0
 2:11/0 = 0
@@ -119,8 +133,11 @@ texture = ExtResource("2_rp5iu")
 12:11/0 = 0
 14:11/0 = 0
 18:11/0 = 0
+18:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.6978807, -8, -2.5180216)
 19:11/0 = 0
+19:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.6978807, -8, -2.5180216)
 20:11/0 = 0
+20:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.6978807, -8, -2.5180216)
 22:11/0 = 0
 26:11/0 = 0
 27:11/0 = 0
@@ -183,6 +200,22 @@ texture = ExtResource("2_rp5iu")
 29:20/0 = 0
 31:20/0 = 0
 
+[sub_resource type="TileSet" id="TileSet_rp5iu"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lao3w")
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_c6p7v"]
+tile_data = PackedInt32Array(0, 65537, 4)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_hkxy7"]
+tile_data = PackedInt32Array(0, 262145, 4)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_orrsl"]
+tile_data = PackedInt32Array(0, 262145, 10)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_lbvpa"]
+tile_data = PackedInt32Array(0, 393217, 3)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkxy7"]
 texture = ExtResource("3_lao3w")
 9:1/0 = 0
@@ -194,6 +227,7 @@ texture = ExtResource("3_lao3w")
 21:1/0 = 0
 1:2/0 = 0
 6:3/0 = 0
+6:3/0/texture_origin = Vector2i(-8, 8)
 9:3/0 = 0
 10:3/0 = 0
 11:3/0 = 0
@@ -206,7 +240,6 @@ texture = ExtResource("3_lao3w")
 21:3/0 = 0
 22:3/0 = 0
 23:3/0 = 0
-4:4/0 = 0
 9:4/0 = 0
 11:4/0 = 0
 13:4/0 = 0
@@ -215,7 +248,6 @@ texture = ExtResource("3_lao3w")
 19:4/0 = 0
 21:4/0 = 0
 23:4/0 = 0
-4:5/0 = 0
 6:5/0 = 0
 7:5/0 = 0
 9:5/0 = 0
@@ -230,87 +262,6 @@ texture = ExtResource("3_lao3w")
 21:5/0 = 0
 22:5/0 = 0
 23:5/0 = 0
-4:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-15:7/0 = 0
-20:7/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-15:8/0 = 0
-20:8/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-10:10/0 = 0
-11:10/0 = 0
-1:4/size_in_atlas = Vector2i(2, 5)
-1:4/0 = 0
-4:8/size_in_atlas = Vector2i(3, 1)
-4:8/0 = 0
-4:10/size_in_atlas = Vector2i(2, 1)
-4:10/0 = 0
-17:7/size_in_atlas = Vector2i(2, 2)
-17:7/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_rp5iu"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lao3w")
-sources/1 = SubResource("TileSetAtlasSource_hkxy7")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6p7v"]
-texture = ExtResource("3_lao3w")
-9:1/0 = 0
-11:1/0 = 0
-13:1/0 = 0
-15:1/0 = 0
-17:1/0 = 0
-19:1/0 = 0
-21:1/0 = 0
-1:2/0 = 0
-6:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-13:3/0 = 0
-14:3/0 = 0
-15:3/0 = 0
-17:3/0 = 0
-18:3/0 = 0
-19:3/0 = 0
-21:3/0 = 0
-22:3/0 = 0
-23:3/0 = 0
-4:4/0 = 0
-9:4/0 = 0
-11:4/0 = 0
-13:4/0 = 0
-15:4/0 = 0
-17:4/0 = 0
-19:4/0 = 0
-21:4/0 = 0
-23:4/0 = 0
-4:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-17:5/0 = 0
-18:5/0 = 0
-19:5/0 = 0
-21:5/0 = 0
-22:5/0 = 0
-23:5/0 = 0
-4:6/0 = 0
 6:6/0 = 0
 7:6/0 = 0
 9:7/0 = 0
@@ -321,9 +272,6 @@ texture = ExtResource("3_lao3w")
 17:7/0 = 0
 18:7/0 = 0
 20:7/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
 9:8/0 = 0
 10:8/0 = 0
 12:8/0 = 0
@@ -332,17 +280,31 @@ texture = ExtResource("3_lao3w")
 17:8/0 = 0
 18:8/0 = 0
 20:8/0 = 0
-4:10/0 = 0
-5:10/0 = 0
 7:10/0 = 0
 8:10/0 = 0
 10:10/0 = 0
 11:10/0 = 0
 1:4/size_in_atlas = Vector2i(2, 5)
 1:4/0 = 0
+1:4/0/texture_origin = Vector2i(0, 8)
+4:8/size_in_atlas = Vector2i(3, 1)
+4:8/0 = 0
+4:8/0/texture_origin = Vector2i(0, 8)
+4:10/size_in_atlas = Vector2i(2, 1)
+4:10/0 = 0
+4:10/0/texture_origin = Vector2i(0, 8)
+4:5/size_in_atlas = Vector2i(1, 2)
+4:5/0 = 0
+4:5/0/texture_origin = Vector2i(0, 16)
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.031582, -32.17501, 8.46711, -32.17501, 8.46711, -28.223694, -7.3381577, -28.788168)
 
 [sub_resource type="TileSet" id="TileSet_0i88t"]
-sources/0 = SubResource("TileSetAtlasSource_c6p7v")
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_hkxy7")
+pattern_0 = SubResource("TileMapPattern_c6p7v")
+pattern_1 = SubResource("TileMapPattern_hkxy7")
+pattern_2 = SubResource("TileMapPattern_orrsl")
+pattern_3 = SubResource("TileMapPattern_lbvpa")
 
 [node name="Cave" type="Node2D" unique_id=452158766]
 position = Vector2(11, 26)
@@ -352,10 +314,12 @@ position = Vector2(30, 122)
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=2069767289]
 position = Vector2(1, 7)
-tile_map_data = PackedByteArray("AAAUAAkAAAADAAYAAAAVAAkAAAADAAYAAAAWAAkAAAADAAYAAAAXAAkAAAADAAYAAAAYAAkAAAADAAYAAAAZAAkAAAADAAYAAAAaAAkAAAADAAYAAAAbAAkAAAADAAYAAAAcAAkAAAADAAYAAAAdAAkAAAADAAYAAAAeAAkAAAADAAYAAAAfAAkAAAADAAYAAAAgAAkAAAADAAYAAAAhAAkAAAADAAYAAAAiAAkAAAADAAYAAAAUAAoAAAADAAcAAAAVAAoAAAADAAcAAAAWAAoAAAADAAcAAAAXAAoAAAADAAcAAAAYAAoAAAADAAcAAAAZAAoAAAADAAcAAAAaAAoAAAADAAcAAAAbAAoAAAADAAcAAAAcAAoAAAADAAcAAAAdAAoAAAADAAcAAAAeAAoAAAADAAcAAAAfAAoAAAADAAcAAAAgAAoAAAADAAcAAAAhAAoAAAADAAcAAAAiAAoAAAADAAcAAAAQAAcAAAABAAEAAAASAAcAAAACAAEAAAARAAcAAAACAAEAAAD//wkAAAACAAYAAAD//woAAAACAAcAAAAAAAkAAAADAAYAAAAAAAoAAAADAAcAAAABAAkAAAADAAYAAAABAAoAAAADAAcAAAACAAkAAAADAAYAAAACAAoAAAADAAcAAAADAAkAAAADAAYAAAADAAoAAAADAAcAAAAEAAkAAAADAAYAAAAEAAoAAAADAAcAAAAFAAkAAAADAAYAAAAFAAoAAAADAAcAAAAGAAkAAAADAAYAAAAGAAoAAAADAAcAAAAHAAkAAAADAAYAAAAHAAoAAAADAAcAAAAIAAkAAAADAAYAAAAIAAoAAAADAAcAAAAJAAkAAAADAAYAAAAJAAoAAAADAAcAAAAKAAkAAAADAAYAAAAKAAoAAAADAAcAAAALAAkAAAADAAYAAAALAAoAAAADAAcAAAAMAAkAAAADAAYAAAAMAAoAAAADAAcAAAANAAkAAAADAAYAAAANAAoAAAADAAcAAAAOAAkAAAADAAYAAAAOAAoAAAADAAcAAAAEAAYAAQABAAQAAAAIAAYAAQABAAQAAAAGAAQAAQAEAAgAAAAGAAgAAQAGAAMAAAAGAAcAAQAGAAMAAAALAAgAAQAGAAMAAAAMAAgAAQAGAAMAAAAMAAcAAQAGAAMAAAANAAgAAQAGAAMAAAAXAAgAAQAGAAMAAAAYAAcAAQAGAAMAAAAYAAgAAQAGAAMAAAAZAAgAAQAGAAMAAAAcAAgAAQAEAAoAAAAKAAgAAQAEAAoAAAA=")
+tile_map_data = PackedByteArray("AAAUAAkAAAADAAYAAAAVAAkAAAADAAYAAAAWAAkAAAADAAYAAAAXAAkAAAADAAYAAAAYAAkAAAADAAYAAAAZAAkAAAADAAYAAAAaAAkAAAADAAYAAAAbAAkAAAADAAYAAAAcAAkAAAADAAYAAAAdAAkAAAADAAYAAAAeAAkAAAADAAYAAAAfAAkAAAADAAYAAAAgAAkAAAADAAYAAAAhAAkAAAADAAYAAAAiAAkAAAADAAYAAAAUAAoAAAADAAcAAAAVAAoAAAADAAcAAAAWAAoAAAADAAcAAAAXAAoAAAADAAcAAAAYAAoAAAADAAcAAAAZAAoAAAADAAcAAAAaAAoAAAADAAcAAAAbAAoAAAADAAcAAAAcAAoAAAADAAcAAAAdAAoAAAADAAcAAAAeAAoAAAADAAcAAAAfAAoAAAADAAcAAAAgAAoAAAADAAcAAAAhAAoAAAADAAcAAAAiAAoAAAADAAcAAAAQAAcAAAABAAEAAAASAAcAAAACAAEAAAARAAcAAAACAAEAAAD//wkAAAACAAYAAAD//woAAAACAAcAAAAAAAkAAAADAAYAAAAAAAoAAAADAAcAAAABAAkAAAADAAYAAAABAAoAAAADAAcAAAACAAkAAAADAAYAAAACAAoAAAADAAcAAAADAAkAAAADAAYAAAADAAoAAAADAAcAAAAEAAkAAAADAAYAAAAEAAoAAAADAAcAAAAFAAkAAAADAAYAAAAFAAoAAAADAAcAAAAGAAkAAAADAAYAAAAGAAoAAAADAAcAAAAHAAkAAAADAAYAAAAHAAoAAAADAAcAAAAIAAkAAAADAAYAAAAIAAoAAAADAAcAAAAJAAkAAAADAAYAAAAJAAoAAAADAAcAAAAKAAkAAAADAAYAAAAKAAoAAAADAAcAAAALAAkAAAADAAYAAAALAAoAAAADAAcAAAAMAAkAAAADAAYAAAAMAAoAAAADAAcAAAANAAkAAAADAAYAAAANAAoAAAADAAcAAAAOAAkAAAADAAYAAAAOAAoAAAADAAcAAAAkAAcAAAASAAsAAAAlAAcAAAATAAsAAAAmAAcAAAATAAsAAAAoAAUAAAASAAsAAAApAAUAAAATAAYAAAAqAAUAAAATAAYAAAArAAUAAAATAAYAAAAsAAUAAAATAAYAAAAtAAQAAAASAAYAAAAuAAQAAAASAAYAAAAvAAQAAAASAAYAAAAwAAQAAAASAAYAAAAxAAQAAAASAAYAAAAyAAQAAAASAAYAAAAzAAQAAAASAAYAAAA0AAQAAAASAAYAAAA1AAQAAAASAAYAAAA2AAQAAAASAAYAAAA3AAQAAAASAAYAAAA4AAQAAAASAAYAAAA5AAQAAAASAAYAAAAtAAUAAAAUAAYAAAAuAAUAAAAUAAYAAAAvAAUAAAAUAAYAAAAwAAUAAAAUAAYAAAAxAAUAAAAUAAYAAAAyAAUAAAAUAAYAAAAzAAUAAAAUAAYAAAA0AAUAAAAUAAYAAAA1AAUAAAAUAAYAAAA2AAUAAAAUAAYAAAA3AAUAAAAUAAYAAAA4AAUAAAAUAAYAAAA5AAUAAAAUAAYAAAA6AAUAAAAUAAYAAAA7AAUAAAAUAAYAAAA8AAUAAAAUAAYAAAA9AAUAAAAUAAYAAAA+AAUAAAAUAAYAAAA/AAUAAAAUAAYAAABAAAUAAAAUAAYAAABBAAUAAAAUAAYAAABCAAUAAAAUAAYAAABDAAUAAAAUAAYAAABEAAUAAAAUAAYAAABAAAYAAAAUAAYAAABBAAYAAAAUAAYAAABCAAYAAAAUAAYAAABDAAYAAAAUAAYAAABEAAYAAAAUAAYAAABFAAYAAAAWAAYAAABGAAYAAAAXAAYAAABHAAYAAAAXAAYAAABIAAYAAAAXAAYAAABJAAYAAAAXAAYAAABKAAYAAAAXAAYAAAA=")
 tile_set = SubResource("TileSet_rp5iu")
 
 [node name="Decoration" type="TileMapLayer" parent="." unique_id=1101516333]
+position = Vector2(12, 0)
+tile_map_data = PackedByteArray("AAAHAAcAAQABAAQAAAADAAcAAQABAAQAAAAFAAUAAQAEAAgAAAAIAAkAAQAGAAMAAAAFAAkAAQAGAAMAAAAFAAgAAQAGAAMAAAAFAAcAAQAGAAMAAAAYAAkAAQAGAAMAAAAZAAkAAQAGAAMAAAAXAAkAAQAGAAMAAAAKAAkAAQAEAAoAAAAbAAkAAQAEAAoAAAAYAAgAAQAGAAMAAAAuAAQAAQAEAAUAAAAwAAQAAQAEAAUAAAA=")
 tile_set = SubResource("TileSet_0i88t")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1799074929]
@@ -366,8 +330,8 @@ motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Completa" unique_id=1405100775]
 texture_repeat = 2
-position = Vector2(0, -18)
-scale = Vector2(1.0017362, 1.0673076)
+position = Vector2(0, -7.0000005)
+scale = Vector2(1.0017362, 1.0528846)
 texture = ExtResource("4_c6p7v")
 centered = false
 region_enabled = true
