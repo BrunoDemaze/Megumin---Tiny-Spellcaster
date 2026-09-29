@@ -124,12 +124,9 @@ scale = Vector2(0.834961, 0.9589843)
 sprite_frames = SubResource("SpriteFrames_0i88t")
 animation = &"idle"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.77969915
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=283830840]
 limit_left = 0
-limit_top = 0
 limit_bottom = 200
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
