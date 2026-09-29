@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by882fvhwxwgk"
-path="res://.godot/imported/Ducking_(32 x 32).png-b9a385a6172b11f24764047bf973cdcb.ctex"
+path="res://.godot/imported/Ducking_(32 x 32).png-672c76b3fdac1baaff170bf40d877a11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/2 - Lil Wiz/Ducking_(32 x 32).png"
-dest_files=["res://.godot/imported/Ducking_(32 x 32).png-b9a385a6172b11f24764047bf973cdcb.ctex"]
+source_file="res://2 - Lil Wiz/Ducking_(32 x 32).png"
+dest_files=["res://.godot/imported/Ducking_(32 x 32).png-672c76b3fdac1baaff170bf40d877a11.ctex"]
 
 [params]
 

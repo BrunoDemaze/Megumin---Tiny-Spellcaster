@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iscf1p6ady1i"
-path="res://.godot/imported/Running_(32 x 32).png-e6ab9008b6ca9c47c29d7b380df2bb72.ctex"
+path="res://.godot/imported/Running_(32 x 32).png-83ebb3b030c7d96bd3821f97e232b36f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/2 - Lil Wiz/Running_(32 x 32).png"
-dest_files=["res://.godot/imported/Running_(32 x 32).png-e6ab9008b6ca9c47c29d7b380df2bb72.ctex"]
+source_file="res://2 - Lil Wiz/Running_(32 x 32).png"
+dest_files=["res://.godot/imported/Running_(32 x 32).png-83ebb3b030c7d96bd3821f97e232b36f.ctex"]
 
 [params]
 
