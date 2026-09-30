@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cubjfmyx7woy6"
-path="res://.godot/imported/1 - Foreground_scenery.png-3da6504cb61d27ca217f0768ed336252.ctex"
+path="res://.godot/imported/1 - Foreground_scenery.png-a6126b3fbd16f56c7f9b7193c5abaa0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/1 - Grassland/Background parts/1 - Foreground_scenery.png"
-dest_files=["res://.godot/imported/1 - Foreground_scenery.png-3da6504cb61d27ca217f0768ed336252.ctex"]
+source_file="res://1 - Grassland/Background parts/1 - Foreground_scenery.png"
+dest_files=["res://.godot/imported/1 - Foreground_scenery.png-a6126b3fbd16f56c7f9b7193c5abaa0e.ctex"]
 
 [params]
 

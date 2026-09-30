@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bom8iy7pqu16n"
-path="res://.godot/imported/5 - Sky_color.png-291c63311947e7f85707afd8044b027d.ctex"
+uid="uid://cgb1kiruf1b1n"
+path="res://.godot/imported/Winter_entities (16 x 16).png-d7bc14c8ca3f3f378aaf1c4b9198a6cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1 - Grassland/Background parts/5 - Sky_color.png"
-dest_files=["res://.godot/imported/5 - Sky_color.png-291c63311947e7f85707afd8044b027d.ctex"]
+source_file="res://Seasonal Tilesets/4 - Winter World/Winter_entities (16 x 16).png"
+dest_files=["res://.godot/imported/Winter_entities (16 x 16).png-d7bc14c8ca3f3f378aaf1c4b9198a6cf.ctex"]
 
 [params]
 

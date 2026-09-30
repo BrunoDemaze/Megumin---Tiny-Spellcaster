@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beg7op0675pht"
-path="res://.godot/imported/_Complete_static_BG_(288 x 208).png-e3951c9965f238695709ea90f7e21f0d.ctex"
+path="res://.godot/imported/_Complete_static_BG_(288 x 208).png-dfff78b290c06123f284a1fa4aa782bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png"
-dest_files=["res://.godot/imported/_Complete_static_BG_(288 x 208).png-e3951c9965f238695709ea90f7e21f0d.ctex"]
+source_file="res://1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png"
+dest_files=["res://.godot/imported/_Complete_static_BG_(288 x 208).png-dfff78b290c06123f284a1fa4aa782bb.ctex"]
 
 [params]
 

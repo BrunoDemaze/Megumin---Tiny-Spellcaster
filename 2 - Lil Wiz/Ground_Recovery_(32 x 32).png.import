@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvcsqos1a8i8t"
-path="res://.godot/imported/Ground_Recovery_(32 x 32).png-a71cc1868e30c6e495bc7e7af1c243cd.ctex"
+path="res://.godot/imported/Ground_Recovery_(32 x 32).png-49baf8c71555189e5cb082c242d7d881.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/2 - Lil Wiz/Ground_Recovery_(32 x 32).png"
-dest_files=["res://.godot/imported/Ground_Recovery_(32 x 32).png-a71cc1868e30c6e495bc7e7af1c243cd.ctex"]
+source_file="res://2 - Lil Wiz/Ground_Recovery_(32 x 32).png"
+dest_files=["res://.godot/imported/Ground_Recovery_(32 x 32).png-49baf8c71555189e5cb082c242d7d881.ctex"]
 
 [params]
 

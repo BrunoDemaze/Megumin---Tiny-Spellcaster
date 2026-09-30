@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csvfisluajeci"
-path="res://.godot/imported/Terrain (16 x 16).png-4733a705d989c10ac38fc71bf0e87a55.ctex"
+path="res://.godot/imported/Terrain (16 x 16).png-dc2ad737cbfe6014d8a56a2be1ab71d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png"
-dest_files=["res://.godot/imported/Terrain (16 x 16).png-4733a705d989c10ac38fc71bf0e87a55.ctex"]
+source_file="res://Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png"
+dest_files=["res://.godot/imported/Terrain (16 x 16).png-dc2ad737cbfe6014d8a56a2be1ab71d8.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c20dn3ba0bkxr"
-path="res://.godot/imported/Terrain (16 x 16).png-8374f029f6a219ec028e6ffbdecdc886.ctex"
+path="res://.godot/imported/Terrain (16 x 16).png-d3dd9dacb3a90cc56f773c99f89a6c71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/1 - Grassland/Terrain (16 x 16).png"
-dest_files=["res://.godot/imported/Terrain (16 x 16).png-8374f029f6a219ec028e6ffbdecdc886.ctex"]
+source_file="res://1 - Grassland/Terrain (16 x 16).png"
+dest_files=["res://.godot/imported/Terrain (16 x 16).png-d3dd9dacb3a90cc56f773c99f89a6c71.ctex"]
 
 [params]
 

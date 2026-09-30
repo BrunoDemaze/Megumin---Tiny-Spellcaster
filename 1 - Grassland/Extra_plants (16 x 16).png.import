@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b05v1muh5g5ml"
-path="res://.godot/imported/Extra_plants (16 x 16).png-3fb00c116dc116c1734aca046e4fac17.ctex"
+path="res://.godot/imported/Extra_plants (16 x 16).png-7ec9c181e15cda52785d6056dff0f4eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/1 - Grassland/Extra_plants (16 x 16).png"
-dest_files=["res://.godot/imported/Extra_plants (16 x 16).png-3fb00c116dc116c1734aca046e4fac17.ctex"]
+source_file="res://1 - Grassland/Extra_plants (16 x 16).png"
+dest_files=["res://.godot/imported/Extra_plants (16 x 16).png-7ec9c181e15cda52785d6056dff0f4eb.ctex"]
 
 [params]
 
