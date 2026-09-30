@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl6ibk5q24cau"
-path="res://.godot/imported/Casting_Spell_(32 x 32).png-aee7ff0fdea60535216e36375b03a663.ctex"
+path="res://.godot/imported/Casting_Spell_(32 x 32).png-c92891699f3b8c8c3a83db32fbf6f980.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2 - Lil Wiz/Casting_Spell_(32 x 32).png"
-dest_files=["res://.godot/imported/Casting_Spell_(32 x 32).png-aee7ff0fdea60535216e36375b03a663.ctex"]
+source_file="res://sprites/2 - Lil Wiz/Casting_Spell_(32 x 32).png"
+dest_files=["res://.godot/imported/Casting_Spell_(32 x 32).png-c92891699f3b8c8c3a83db32fbf6f980.ctex"]
 
 [params]
 
