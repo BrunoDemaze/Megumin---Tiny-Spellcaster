@@ -28,10 +28,6 @@ region = Rect2(96, 4, 32, 28)
 atlas = ExtResource("2_b0kkn")
 region = Rect2(128, 4, 32, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ef06p"]
-atlas = ExtResource("3_rfe5m")
-region = Rect2(0, 4, 32, 28)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjdhl"]
 atlas = ExtResource("3_e4p34")
 region = Rect2(0, 4, 32, 28)
@@ -80,7 +76,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ef06p")
+"texture": ExtResource("3_rfe5m")
 }],
 "loop": 1,
 "name": &"jump",
@@ -122,7 +118,7 @@ z_index = 1
 position = Vector2(2.4074124e-35, 0)
 scale = Vector2(0.834961, 0.9589843)
 sprite_frames = SubResource("SpriteFrames_0i88t")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=283830840]
