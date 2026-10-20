@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://chritlulhy4jl"]
 
 [ext_resource type="PackedScene" uid="uid://iow4hsy3tp5f" path="res://entities/player.tscn" id="1_5c32m"]
+[ext_resource type="PackedScene" uid="uid://dwscrf2m8xjx3" path="res://entities/camera.tscn" id="1_hkxy7"]
 [ext_resource type="Texture2D" uid="uid://de3200owaeq0f" path="res://sprites/Cave Tileset/Cave Tileset/Brown_Tile_Terrain (16 x 16).png" id="2_rp5iu"]
 [ext_resource type="Texture2D" uid="uid://c0624dvl63235" path="res://sprites/Cave Tileset/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="3_lao3w"]
 [ext_resource type="Texture2D" uid="uid://bhysn8aekwi5e" path="res://sprites/Cave Tileset/Cave Tileset/_Complete_static_BG_(288 x 208).png" id="4_c6p7v"]
@@ -309,7 +310,7 @@ pattern_3 = SubResource("TileMapPattern_lbvpa")
 [node name="Cave" type="Node2D" unique_id=452158766]
 position = Vector2(11, 26)
 
-[node name="Player" parent="." unique_id=1704222957 instance=ExtResource("1_5c32m")]
+[node name="Player" parent="." unique_id=1704222957 groups=["Player"] instance=ExtResource("1_5c32m")]
 position = Vector2(30, 122)
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=2069767289]
@@ -336,3 +337,5 @@ texture = ExtResource("4_c6p7v")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
+
+[node name="Camera" parent="." unique_id=1034525406 instance=ExtResource("1_hkxy7")]
