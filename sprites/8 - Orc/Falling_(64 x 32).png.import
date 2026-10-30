@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g0hefly60srk"
-path="res://.godot/imported/5 - Sky_color.png-d3321244f140fe0da6ba5aff03259029.ctex"
+uid="uid://dtvackyjlmy8s"
+path="res://.godot/imported/Falling_(64 x 32).png-cbaec01bbb6b7a782d2f4abb53f024ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/3 - Tropics/Background parts/5 - Sky_color.png"
-dest_files=["res://.godot/imported/5 - Sky_color.png-d3321244f140fe0da6ba5aff03259029.ctex"]
+source_file="res://sprites/8 - Orc/Falling_(64 x 32).png"
+dest_files=["res://.godot/imported/Falling_(64 x 32).png-cbaec01bbb6b7a782d2f4abb53f024ea.ctex"]
 
 [params]
 

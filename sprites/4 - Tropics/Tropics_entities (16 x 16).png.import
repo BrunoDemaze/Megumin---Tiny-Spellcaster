@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvsqo51sicyi6"
-path="res://.godot/imported/3 - Floating_clouds.png-70f2dbe33616e5a696993249664cf6ba.ctex"
+uid="uid://xcrwan3eyjw7"
+path="res://.godot/imported/Tropics_entities (16 x 16).png-1cdc3afc4bb19a23f9a5a5be163a3b78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/3 - Tropics/Background parts/3 - Floating_clouds.png"
-dest_files=["res://.godot/imported/3 - Floating_clouds.png-70f2dbe33616e5a696993249664cf6ba.ctex"]
+source_file="res://sprites/4 - Tropics/Tropics_entities (16 x 16).png"
+dest_files=["res://.godot/imported/Tropics_entities (16 x 16).png-1cdc3afc4bb19a23f9a5a5be163a3b78.ctex"]
 
 [params]
 

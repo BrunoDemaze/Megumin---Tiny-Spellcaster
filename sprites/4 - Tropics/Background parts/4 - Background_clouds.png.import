@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnpshs01dwo2b"
-path="res://.godot/imported/2 - Waters_version_2.png-1f3f567ecb6f449949404f461c3c6dfa.ctex"
+uid="uid://bnfsxln38wpgw"
+path="res://.godot/imported/4 - Background_clouds.png-51d85fa4a3ff153aa512ae237b0f36d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/3 - Tropics/Background parts/2 - Waters_version_2.png"
-dest_files=["res://.godot/imported/2 - Waters_version_2.png-1f3f567ecb6f449949404f461c3c6dfa.ctex"]
+source_file="res://sprites/4 - Tropics/Background parts/4 - Background_clouds.png"
+dest_files=["res://.godot/imported/4 - Background_clouds.png-51d85fa4a3ff153aa512ae237b0f36d4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcxrleevrprv3"
-path="res://.godot/imported/1 - Waters_version_1.png-732dd18d3238697a7cec16b62e9188f0.ctex"
+uid="uid://dtqmvjf8qxgih"
+path="res://.godot/imported/Hurt_(32 x 32).png-680f0b613710b8199c1352dbc0b354fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/3 - Tropics/Background parts/1 - Waters_version_1.png"
-dest_files=["res://.godot/imported/1 - Waters_version_1.png-732dd18d3238697a7cec16b62e9188f0.ctex"]
+source_file="res://sprites/5 - Moe Scotty/Hurt_(32 x 32).png"
+dest_files=["res://.godot/imported/Hurt_(32 x 32).png-680f0b613710b8199c1352dbc0b354fa.ctex"]
 
 [params]
 

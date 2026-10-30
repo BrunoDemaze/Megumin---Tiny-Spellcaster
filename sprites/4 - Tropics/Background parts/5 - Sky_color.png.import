@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2xxpe7bptjhi"
-path="res://.godot/imported/Terrain (16 x 16).png-5fda308c989d051f6aeb19ae7a5b783c.ctex"
+uid="uid://g0hefly60srk"
+path="res://.godot/imported/5 - Sky_color.png-2427cf74051c403a1a86563b37f8adca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/3 - Tropics/Terrain (16 x 16).png"
-dest_files=["res://.godot/imported/Terrain (16 x 16).png-5fda308c989d051f6aeb19ae7a5b783c.ctex"]
+source_file="res://sprites/4 - Tropics/Background parts/5 - Sky_color.png"
+dest_files=["res://.godot/imported/5 - Sky_color.png-2427cf74051c403a1a86563b37f8adca.ctex"]
 
 [params]
 
