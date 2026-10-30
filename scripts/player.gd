@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+enum PlayerState{
+	idle,
+	walk,
+	jump,
+	duck
+}
+
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 65.0
