@@ -65,12 +65,12 @@ func go_to_duck_state():
 	anim.play("duck")
 	collision_shape.shape.radius = 5
 	collision_shape.shape.height = 10
-	collision_shape.position.y = 3
+	collision_shape.position.y = 5
 	
 func exit_from_duck_state():
 	collision_shape.shape.radius = 6
 	collision_shape.shape.height = 16
-	collision_shape.position.y = 0
+	collision_shape.position.y = 2
 
 
 func idle_state():
