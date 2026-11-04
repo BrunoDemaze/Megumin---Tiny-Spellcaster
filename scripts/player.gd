@@ -5,7 +5,9 @@ enum PlayerState{
 	walk,
 	jump,
 	fall,
-	duck
+	duck,
+	dead,
+	spell
 }
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
@@ -13,11 +15,13 @@ enum PlayerState{
 
 const SPEED = 65.0
 const JUMP_VELOCITY = -300.0
+const ORB = preload("res://itens/spell_orbs.tscn")
 
 var jump_count = 0
 @export var max_jump_count = 2
 var direction = 0
 var status: PlayerState
+
 
 func _ready() -> void:
 	go_to_idle_state()
@@ -38,6 +42,8 @@ func _physics_process(delta: float) -> void:
 			fall_state()
 		PlayerState.duck:
 			duck_state()
+		PlayerState.dead:
+			dead_state()
 			
 	move_and_slide()
 
@@ -66,6 +72,13 @@ func go_to_duck_state():
 	collision_shape.shape.radius = 5
 	collision_shape.shape.height = 10
 	collision_shape.position.y = 5
+	
+func go_to_dead_state():
+	status = PlayerState.dead
+	anim.play("hurt")
+	
+func go_to_spell_state():
+	pass
 	
 func exit_from_duck_state():
 	collision_shape.shape.radius = 6
@@ -136,6 +149,20 @@ func duck_state():
 		go_to_idle_state()
 		return
 
+func temp(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+func dead_state():
+	pass
+	
+func spell_state():
+	pass
 
 func move():
 	update_direction()
@@ -145,15 +172,6 @@ func move():
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-
-func temp(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 func update_direction():
 	direction = Input.get_axis("left", "right")
@@ -165,3 +183,6 @@ func update_direction():
 	
 func can_jump() -> bool:
 	return jump_count < max_jump_count
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

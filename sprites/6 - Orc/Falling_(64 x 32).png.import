@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhok0imb6eroc"
-path="res://.godot/imported/Blink_(Replace last frame on Walking)_(64 x 32).png-6fa6bc819a4b56e43342c0b63c2176df.ctex"
+uid="uid://dtvackyjlmy8s"
+path="res://.godot/imported/Falling_(64 x 32).png-d27e940606fdded6678939916e3a5dc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/8 - Orc/Blink_(Replace last frame on Walking)_(64 x 32).png"
-dest_files=["res://.godot/imported/Blink_(Replace last frame on Walking)_(64 x 32).png-6fa6bc819a4b56e43342c0b63c2176df.ctex"]
+source_file="res://sprites/6 - Orc/Falling_(64 x 32).png"
+dest_files=["res://.godot/imported/Falling_(64 x 32).png-d27e940606fdded6678939916e3a5dc9.ctex"]
 
 [params]
 

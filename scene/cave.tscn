@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0624dvl63235" path="res://sprites/Cave Tileset/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="3_lao3w"]
 [ext_resource type="Texture2D" uid="uid://bhysn8aekwi5e" path="res://sprites/Cave Tileset/Cave Tileset/_Complete_static_BG_(288 x 208).png" id="4_c6p7v"]
 [ext_resource type="PackedScene" uid="uid://l30ran2145x3" path="res://entities/level_end.tscn" id="6_orrsl"]
+[ext_resource type="PackedScene" uid="uid://cht0huet1ye4n" path="res://entities/skeleton.tscn" id="7_lbvpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lao3w"]
 texture = ExtResource("2_rp5iu")
@@ -356,5 +357,8 @@ next_level = "game"
 [node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=1723320643]
 position = Vector2(0, -36.25)
 shape = SubResource("RectangleShape2D_lbvpa")
+
+[node name="Skeleton" parent="." unique_id=1508701746 instance=ExtResource("7_lbvpa")]
+position = Vector2(202, 133)
 
 [editable path="LevelEnd"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4s5l6c6lpbw8"
-path="res://.godot/imported/Walking_(64 x 32).png-5b66e00988ee21f3b5a082814b46191e.ctex"
+uid="uid://c3581wcyjqipx"
+path="res://.godot/imported/Walking_&_Blink_(64 x 32).png-7a1eb4d630360946d592405e4a5d383f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/8 - Orc/Walking_(64 x 32).png"
-dest_files=["res://.godot/imported/Walking_(64 x 32).png-5b66e00988ee21f3b5a082814b46191e.ctex"]
+source_file="res://sprites/6 - Orc/Walking_&_Blink_(64 x 32).png"
+dest_files=["res://.godot/imported/Walking_&_Blink_(64 x 32).png-7a1eb4d630360946d592405e4a5d383f.ctex"]
 
 [params]
 

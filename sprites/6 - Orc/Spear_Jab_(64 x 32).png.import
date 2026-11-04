@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3581wcyjqipx"
-path="res://.godot/imported/Walking_&_Blink_(64 x 32).png-4ba170280a8d7329d31e91e72b614ce6.ctex"
+uid="uid://t1nyspn6xwjd"
+path="res://.godot/imported/Spear_Jab_(64 x 32).png-7f9edaf997311ab559a25313c4207660.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/8 - Orc/Walking_&_Blink_(64 x 32).png"
-dest_files=["res://.godot/imported/Walking_&_Blink_(64 x 32).png-4ba170280a8d7329d31e91e72b614ce6.ctex"]
+source_file="res://sprites/6 - Orc/Spear_Jab_(64 x 32).png"
+dest_files=["res://.godot/imported/Spear_Jab_(64 x 32).png-7f9edaf997311ab559a25313c4207660.ctex"]
 
 [params]
 

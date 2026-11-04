@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtvackyjlmy8s"
-path="res://.godot/imported/Falling_(64 x 32).png-cbaec01bbb6b7a782d2f4abb53f024ea.ctex"
+uid="uid://4s5l6c6lpbw8"
+path="res://.godot/imported/Walking_(64 x 32).png-d0c6c60525887c6688bef938f8e7309e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/8 - Orc/Falling_(64 x 32).png"
-dest_files=["res://.godot/imported/Falling_(64 x 32).png-cbaec01bbb6b7a782d2f4abb53f024ea.ctex"]
+source_file="res://sprites/6 - Orc/Walking_(64 x 32).png"
+dest_files=["res://.godot/imported/Walking_(64 x 32).png-d0c6c60525887c6688bef938f8e7309e.ctex"]
 
 [params]
 

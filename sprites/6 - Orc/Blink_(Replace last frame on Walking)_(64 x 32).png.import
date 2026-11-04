@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tw78gqdyss4n"
-path="res://.godot/imported/Idle_(64 x 32).png-ac90b7e77651f02678319522e4d28d18.ctex"
+uid="uid://bhok0imb6eroc"
+path="res://.godot/imported/Blink_(Replace last frame on Walking)_(64 x 32).png-d5545a5ae1b3826146edc07a8514c378.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/8 - Orc/Idle_(64 x 32).png"
-dest_files=["res://.godot/imported/Idle_(64 x 32).png-ac90b7e77651f02678319522e4d28d18.ctex"]
+source_file="res://sprites/6 - Orc/Blink_(Replace last frame on Walking)_(64 x 32).png"
+dest_files=["res://.godot/imported/Blink_(Replace last frame on Walking)_(64 x 32).png-d5545a5ae1b3826146edc07a8514c378.ctex"]
 
 [params]
 

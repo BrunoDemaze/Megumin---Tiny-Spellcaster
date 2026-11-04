@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t1nyspn6xwjd"
-path="res://.godot/imported/Spear_Jab_(64 x 32).png-eaec69730a9de5a43c6cc3d7d3741d60.ctex"
+uid="uid://n12celsgwtdf"
+path="res://.godot/imported/Hurt_(64 x 32).png-ede7e542fa2669ce80d71b152c575957.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/8 - Orc/Spear_Jab_(64 x 32).png"
-dest_files=["res://.godot/imported/Spear_Jab_(64 x 32).png-eaec69730a9de5a43c6cc3d7d3741d60.ctex"]
+source_file="res://sprites/6 - Orc/Hurt_(64 x 32).png"
+dest_files=["res://.godot/imported/Hurt_(64 x 32).png-ede7e542fa2669ce80d71b152c575957.ctex"]
 
 [params]
 
