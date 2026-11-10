@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c3ay2srctq0a5" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="5_xlg7c"]
 [ext_resource type="Texture2D" uid="uid://decwtymbmlek3" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="6_qpk70"]
 [ext_resource type="Texture2D" uid="uid://bom8iy7pqu16n" path="res://sprites/1 - Grassland/Background parts/5 - Sky_color.png" id="6_yq8tf"]
+[ext_resource type="PackedScene" uid="uid://cht0huet1ye4n" path="res://entities/skeleton.tscn" id="7_81276"]
 [ext_resource type="Texture2D" uid="uid://8yvihvym0myo" path="res://sprites/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="7_ym5sv"]
 [ext_resource type="Texture2D" uid="uid://bt3a5cuy7bfxp" path="res://sprites/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="8_sng2h"]
 [ext_resource type="Texture2D" uid="uid://cfm7q14iphn6m" path="res://sprites/1 - Grassland/Background parts/2 - Hills.png" id="9_5g16k"]
@@ -289,5 +290,8 @@ next_level = "cave"
 [node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=1723320643]
 position = Vector2(37, -43)
 shape = SubResource("RectangleShape2D_81276")
+
+[node name="Skeleton" parent="." unique_id=1508701746 instance=ExtResource("7_81276")]
+position = Vector2(225, 14)
 
 [editable path="LevelEnd"]
