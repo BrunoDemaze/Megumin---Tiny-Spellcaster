@@ -97,7 +97,7 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("4_6nm46")
 }, {
 "duration": 1.0,
@@ -214,7 +214,7 @@ z_index = 1
 position = Vector2(0, -3.506)
 scale = Vector2(0.834961, 0.85036063)
 sprite_frames = SubResource("SpriteFrames_0i88t")
-animation = &"spell"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1547415054]

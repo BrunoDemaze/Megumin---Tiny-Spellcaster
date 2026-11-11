@@ -2,19 +2,20 @@ extends Area2D
 
 const SPEED = 100
 
-var velocity = Vector2.ZERO
 var direction = 1
 
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
 func _ready() -> void:
-	pass 
+	anim.play("magic")
 
 func set_direction(dir):
 	direction = dir
+
 	if direction == 1:
-		$anim.flip_h = false
+		anim.flip_h = false
 	else:
-		$anim.flip_h = true
+		anim.flip_h = true
 
 func _physics_process(delta: float) -> void:
-	velocity.x = SPEED * delta * direction
-	translate(velocity)
+	position.x += SPEED * delta * direction

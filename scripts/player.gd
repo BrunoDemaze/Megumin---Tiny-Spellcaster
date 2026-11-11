@@ -21,10 +21,14 @@ var jump_count = 0
 @export var max_jump_count = 2
 var direction = 0
 var status: PlayerState
-
+var spell_created = false
+var previous_status: PlayerState
 
 func _ready() -> void:
 	go_to_idle_state()
+
+	if not anim.animation_finished.is_connected(_on_animated_sprite_2d_animation_finished):
+		anim.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
 
 func _physics_process(delta: float) -> void:
 	
@@ -44,6 +48,8 @@ func _physics_process(delta: float) -> void:
 			duck_state()
 		PlayerState.dead:
 			dead_state()
+		PlayerState.spell:
+			spell_state()
 			
 	move_and_slide()
 
@@ -54,7 +60,12 @@ func go_to_idle_state():
 func go_to_walk_state():
 	status = PlayerState.walk
 	anim.play("walk")
-
+	
+func go_to_spell_state():
+	previous_status = status
+	status = PlayerState.spell
+	spell_created = false
+	anim.play("spell")
 
 func go_to_jump_state():
 	status = PlayerState.jump
@@ -77,9 +88,6 @@ func go_to_dead_state():
 	status = PlayerState.dead
 	anim.play("hurt")
 	
-func go_to_spell_state():
-	pass
-	
 func exit_from_duck_state():
 	collision_shape.shape.radius = 6
 	collision_shape.shape.height = 16
@@ -88,14 +96,19 @@ func exit_from_duck_state():
 
 func idle_state():
 	move()
+
+	if Input.is_action_just_pressed("magic"):
+		go_to_spell_state()
+		return
+
 	if velocity.x != 0:
 		go_to_walk_state()
 		return
-		
+
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
 		return
-		
+
 	if Input.is_action_pressed("duck"):
 		go_to_duck_state()
 		return
@@ -103,18 +116,60 @@ func idle_state():
 
 func walk_state():
 	move()
+
+	if Input.is_action_just_pressed("magic"):
+		go_to_spell_state()
+		return
+
 	if velocity.x == 0:
 		go_to_idle_state()
 		return
-	
+
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
 		return
-		
+
 	if !is_on_floor():
-		jump_count += 1
 		go_to_fall_state()
 		return
+			
+		
+func spell_state():
+	move()
+	
+	if not spell_created:
+		var spell_instance = ORB.instantiate()
+		var dir = -1 if anim.flip_h else 1
+
+		get_parent().add_child(spell_instance)
+
+		spell_instance.set_direction(dir)
+		spell_instance.global_position = global_position + Vector2(dir * 15, 0)
+
+		spell_created = true
+		
+func _on_animated_sprite_2d_animation_finished():
+
+	if status != PlayerState.spell:
+		return
+
+	print("MAGIA FINALIZADA!")
+
+	if not is_on_floor():
+		if velocity.y < 0:
+			status = PlayerState.jump
+			anim.play("jump")
+		else:
+			go_to_fall_state()
+
+	elif Input.is_action_pressed("duck"):
+		go_to_duck_state()
+
+	elif velocity.x != 0:
+		go_to_walk_state()
+
+	else:
+		go_to_idle_state()
 
 func jump_state():
 	move()
@@ -161,9 +216,7 @@ func temp(delta: float) -> void:
 func dead_state():
 	pass
 	
-func spell_state():
-	pass
-
+	
 func move():
 	update_direction()
 	
