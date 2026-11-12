@@ -89,9 +89,9 @@ func go_to_dead_state():
 	anim.play("hurt")
 	
 func exit_from_duck_state():
-	collision_shape.shape.radius = 6
-	collision_shape.shape.height = 16
-	collision_shape.position.y = 2
+	collision_shape.shape.radius = 7
+	collision_shape.shape.height = 20
+	collision_shape.position.y = 0
 
 
 func idle_state():
@@ -152,8 +152,6 @@ func _on_animated_sprite_2d_animation_finished():
 
 	if status != PlayerState.spell:
 		return
-
-	print("MAGIA FINALIZADA!")
 
 	if not is_on_floor():
 		if velocity.y < 0:
