@@ -26,6 +26,8 @@ window/stretch/aspect="expand"
 [global_group]
 
 Player=""
+Enemies=""
+LethalArea=""
 
 [input]
 

@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func go_to_walk_state():
-	status = SkeletonState.walk
+	status = SkeletonState.	walk
 	anim.play("walk")
 	
 func go_to_attack_state():

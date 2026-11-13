@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c31re5p62u1e" path="res://sprites/2 - Lil Wiz/Idle_(32 x 32).png" id="2_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://by882fvhwxwgk" path="res://sprites/2 - Lil Wiz/Ducking_(32 x 32).png" id="2_qly61"]
 [ext_resource type="Texture2D" uid="uid://iscf1p6ady1i" path="res://sprites/2 - Lil Wiz/Running_(32 x 32).png" id="3_e4p34"]
-[ext_resource type="Texture2D" uid="uid://bvcsqos1a8i8t" path="res://sprites/2 - Lil Wiz/Ground_Recovery_(32 x 32).png" id="3_i623q"]
 [ext_resource type="Texture2D" uid="uid://dmngsn03lt3gf" path="res://sprites/2 - Lil Wiz/Falling_(32 x 32).png" id="3_qsoyl"]
 [ext_resource type="Texture2D" uid="uid://dv3o4c0yommf7" path="res://sprites/2 - Lil Wiz/Jumping_(32 x 32).png" id="3_rfe5m"]
 [ext_resource type="Texture2D" uid="uid://beh2doivhcihs" path="res://sprites/2 - Lil Wiz/Hurt_(32 x 32).png" id="4_6nm46"]
@@ -12,19 +11,15 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dp3pk"]
 radius = 7.0
-height = 20.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgp7q"]
-atlas = ExtResource("3_i623q")
+atlas = ExtResource("4_6nm46")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1n8aq"]
-atlas = ExtResource("3_i623q")
+atlas = ExtResource("4_6nm46")
 region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_28s6d"]
-atlas = ExtResource("3_i623q")
-region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qsoyl"]
 atlas = ExtResource("2_qly61")
@@ -97,17 +92,11 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
 animations = [{
 "frames": [{
-"duration": 0.5,
-"texture": ExtResource("4_6nm46")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cgp7q")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1n8aq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_28s6d")
 }],
 "loop": 0,
 "name": &"dead",
@@ -199,7 +188,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
-size = Vector2(12, 20)
+size = Vector2(12, 18)
 
 [node name="Player" type="CharacterBody2D" unique_id=1704222957 groups=["Player"]]
 collision_layer = 2
@@ -207,6 +196,8 @@ collision_mask = 9
 script = ExtResource("1_merdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1502368429]
+z_index = 1
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_dp3pk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2085022490]
@@ -214,12 +205,18 @@ z_index = 1
 position = Vector2(0, -3.506)
 scale = Vector2(0.834961, 0.85036063)
 sprite_frames = SubResource("SpriteFrames_0i88t")
-animation = &"walk"
+animation = &"dead"
 autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1547415054]
+collision_layer = 2
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=806482384]
+z_index = 3
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_86ap7")
 debug_color = Color(0.93277043, 0.18740487, 0.46009874, 0.41960785)
 

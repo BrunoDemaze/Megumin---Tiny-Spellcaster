@@ -12,6 +12,7 @@ enum PlayerState{
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var hitbox_collision_shape: CollisionShape2D = $Hitbox/CollisionShape2D
 
 const SPEED = 65.0
 const JUMP_VELOCITY = -300.0
@@ -84,14 +85,22 @@ func go_to_duck_state():
 	collision_shape.shape.height = 10
 	collision_shape.position.y = 5
 	
+	hitbox_collision_shape.shape.size.y = 10
+	hitbox_collision_shape.position.y = 5
+	
 func go_to_dead_state():
 	status = PlayerState.dead
-	anim.play("hurt")
+	anim.play("dead")
+	velocity.x = 0
 	
 func exit_from_duck_state():
 	collision_shape.shape.radius = 7
-	collision_shape.shape.height = 20
-	collision_shape.position.y = 0
+	collision_shape.shape.height = 18
+	collision_shape.position.y = 1
+
+	hitbox_collision_shape.shape.size.y = 18
+	hitbox_collision_shape.position.y = 1
+
 
 
 func idle_state():
@@ -236,4 +245,18 @@ func can_jump() -> bool:
 	return jump_count < max_jump_count
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+	if area.is_in_group("Enemies"):
+		hit_enemy(area)
+	elif area.is_in_group("lethalArea"):
+		hit_lethal_area()
+
+
+func hit_enemy(area: Area2D):
+	if velocity.y > 0:
+		area.get_parent().take_damage()
+		go_to_jump_state()
+	elif status != PlayerState.dead:
+			go_to_dead_state()
+
+func hit_lethal_area():
+	go_to_dead_state()
