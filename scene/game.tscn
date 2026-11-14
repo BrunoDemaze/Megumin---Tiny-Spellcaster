@@ -282,6 +282,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Camera" parent="." unique_id=1034525406 instance=ExtResource("12_sng2h")]
+position = Vector2(58, 160)
 limit_right = 400
 
 [node name="LevelEnd" parent="." unique_id=460575457 instance=ExtResource("13_5g16k")]
@@ -293,6 +294,6 @@ position = Vector2(37, -43)
 shape = SubResource("RectangleShape2D_81276")
 
 [node name="Skeleton" parent="." unique_id=1508701746 instance=ExtResource("7_81276")]
-position = Vector2(225, 14)
+position = Vector2(225, 16)
 
 [editable path="LevelEnd"]

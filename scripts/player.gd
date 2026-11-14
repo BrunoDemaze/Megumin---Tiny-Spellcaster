@@ -1,3 +1,4 @@
+
 extends CharacterBody2D
 
 enum PlayerState{
@@ -25,17 +26,28 @@ var status: PlayerState
 var spell_created = false
 var previous_status: PlayerState
 
+# NOVO: SISTEMA DE VIDA
+@export var max_health = 3
+@export var invulnerability_time = 2.0
+
+var health = 3
+var invulnerable = false
+var blink_tween: Tween
+
+
 func _ready() -> void:
+	health = max_health
 	go_to_idle_state()
 
 	if not anim.animation_finished.is_connected(_on_animated_sprite_2d_animation_finished):
 		anim.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
 
+
 func _physics_process(delta: float) -> void:
-	
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+
 	match status:
 		PlayerState.idle:
 			idle_state()
@@ -51,48 +63,68 @@ func _physics_process(delta: float) -> void:
 			dead_state()
 		PlayerState.spell:
 			spell_state()
-			
+
 	move_and_slide()
+
 
 func go_to_idle_state():
 	status = PlayerState.idle
 	anim.play("idle")
 
+
 func go_to_walk_state():
 	status = PlayerState.walk
 	anim.play("walk")
-	
+
+
 func go_to_spell_state():
 	previous_status = status
 	status = PlayerState.spell
 	spell_created = false
 	anim.play("spell")
 
+
 func go_to_jump_state():
 	status = PlayerState.jump
 	anim.play("jump")
 	velocity.y = JUMP_VELOCITY
 	jump_count += 1
-	
+
+
 func go_to_fall_state():
 	status = PlayerState.fall
 	anim.play("fall")
-	
+
+
 func go_to_duck_state():
 	status = PlayerState.duck
 	anim.play("duck")
 	collision_shape.shape.radius = 5
 	collision_shape.shape.height = 10
 	collision_shape.position.y = 5
-	
+
 	hitbox_collision_shape.shape.size.y = 10
 	hitbox_collision_shape.position.y = 5
-	
+
+
 func go_to_dead_state():
+	if status == PlayerState.dead:
+		return
+
 	status = PlayerState.dead
 	anim.play("dead")
 	velocity.x = 0
-	
+
+	if blink_tween and blink_tween.is_running():
+		blink_tween.kill()
+
+	anim.modulate = Color.WHITE
+
+	await get_tree().create_timer(3.0).timeout
+
+	get_tree().reload_current_scene()
+
+
 func exit_from_duck_state():
 	collision_shape.shape.radius = 7
 	collision_shape.shape.height = 18
@@ -100,7 +132,6 @@ func exit_from_duck_state():
 
 	hitbox_collision_shape.shape.size.y = 18
 	hitbox_collision_shape.position.y = 1
-
 
 
 func idle_state():
@@ -141,11 +172,11 @@ func walk_state():
 	if !is_on_floor():
 		go_to_fall_state()
 		return
-			
-		
+
+
 func spell_state():
 	move()
-	
+
 	if not spell_created:
 		var spell_instance = ORB.instantiate()
 		var dir = -1 if anim.flip_h else 1
@@ -156,7 +187,8 @@ func spell_state():
 		spell_instance.global_position = global_position + Vector2(dir * 15, 0)
 
 		spell_created = true
-		
+
+
 func _on_animated_sprite_2d_animation_finished():
 
 	if status != PlayerState.spell:
@@ -178,25 +210,29 @@ func _on_animated_sprite_2d_animation_finished():
 	else:
 		go_to_idle_state()
 
+
 func jump_state():
 	move()
-	
+
 	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
 		return
+
 	if velocity.y > 0:
 		go_to_fall_state()
 		return
-	
+
+
 func fall_state():
 	move()
-	
+
 	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
 		return
-	
+
 	if is_on_floor():
 		jump_count = 0
+
 		if velocity.x == 0:
 			go_to_idle_state()
 		else:
@@ -206,27 +242,28 @@ func fall_state():
 
 func duck_state():
 	update_direction()
+
 	if Input.is_action_just_released("duck"):
 		exit_from_duck_state()
 		go_to_idle_state()
 		return
 
+
 func temp(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		
+
+
 func dead_state():
-	pass
-	
-	
+	velocity.x = 0
+
+
 func move():
 	update_direction()
-	
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -235,14 +272,67 @@ func move():
 
 func update_direction():
 	direction = Input.get_axis("left", "right")
-	
+
 	if direction < 0:
 		anim.flip_h = true
 	elif direction > 0:
 		anim.flip_h = false
-	
+
+
 func can_jump() -> bool:
 	return jump_count < max_jump_count
+
+
+# NOVO: RECEBER DANO
+
+func take_damage():
+	if status == PlayerState.dead or invulnerable:
+		return
+
+	health -= 1
+	print("Vida: ", health)
+
+	if health <= 0:
+		go_to_dead_state()
+		return
+
+	start_invulnerability()
+
+
+# NOVO: INVULNERABILIDADE DE 2 SEGUNDOS
+
+func start_invulnerability():
+	invulnerable = true
+
+	blink_tween = create_tween().set_loops()
+
+	blink_tween.tween_property(
+		anim,
+		"modulate",
+		Color(1, 0.3, 0.3, 0.25),
+		0.1
+	)
+
+	blink_tween.tween_property(
+		anim,
+		"modulate",
+		Color.WHITE,
+		0.1
+	)
+
+	await get_tree().create_timer(invulnerability_time).timeout
+
+	if status == PlayerState.dead:
+		return
+
+	if blink_tween and blink_tween.is_running():
+		blink_tween.kill()
+
+	anim.modulate = Color.WHITE
+	invulnerable = false
+
+
+# COLISÕES ORIGINAIS
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemies"):
@@ -250,13 +340,17 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("lethalArea"):
 		hit_lethal_area()
 
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("LethalArea"):
+		go_to_dead_state()
+
 
 func hit_enemy(area: Area2D):
-	if velocity.y > 0:
-		area.get_parent().take_damage()
-		go_to_jump_state()
-	elif status != PlayerState.dead:
-			go_to_dead_state()
+	if status == PlayerState.dead:
+		return
+
+	# Não mata mais o jogador ao encostar no inimigo.
+	# O dano será controlado pelo projétil do esqueleto.
 
 func hit_lethal_area():
 	go_to_dead_state()

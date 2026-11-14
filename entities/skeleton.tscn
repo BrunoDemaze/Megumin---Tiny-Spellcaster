@@ -125,9 +125,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oayfp")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"dead",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -166,12 +166,12 @@ position = Vector2(2, 3)
 shape = SubResource("CapsuleShape2D_86ap7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1931728840]
+position = Vector2(0, 0.1)
 sprite_frames = SubResource("SpriteFrames_86ap7")
-animation = &"attack"
-frame = 2
-frame_progress = 0.1586586
+animation = &"walk"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2042070504 groups=["Enemies"]]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1992702745]
 position = Vector2(2, 3)

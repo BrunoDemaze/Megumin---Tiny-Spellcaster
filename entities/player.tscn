@@ -205,10 +205,8 @@ z_index = 1
 position = Vector2(0, -3.506)
 scale = Vector2(0.834961, 0.85036063)
 sprite_frames = SubResource("SpriteFrames_0i88t")
-animation = &"dead"
+animation = &"spell"
 autoplay = "idle"
-frame = 1
-frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1547415054]
 collision_layer = 2
@@ -221,3 +219,4 @@ shape = SubResource("RectangleShape2D_86ap7")
 debug_color = Color(0.93277043, 0.18740487, 0.46009874, 0.41960785)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

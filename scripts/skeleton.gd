@@ -1,3 +1,4 @@
+
 extends CharacterBody2D
 
 enum SkeletonState{
@@ -6,7 +7,7 @@ enum SkeletonState{
 	dead
 }
 
-const SPINNING_BONE = preload("uid://dmqvu67wqeebk")
+const SPINNING_BONE = preload("res://itens/spinning_bone.tscn")
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $Hitbox
@@ -15,22 +16,21 @@ const SPINNING_BONE = preload("uid://dmqvu67wqeebk")
 @onready var player_detector: RayCast2D = $PlayerDetector
 @onready var bone_start_position: Node2D = $BoneStartPosition
 
-const SPEED = 15.0
+const SPEED = 16.0
 const JUMP_VELOCITY = -400.0
 
 var status: SkeletonState
-
 var direction = 1
-var can_throw
+var can_throw = false
 
 func _ready() -> void:
 	go_to_walk_state()
 
 func _physics_process(delta: float) -> void:
-	
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+
 	match status:
 		SkeletonState.walk:
 			walk_state(delta)
@@ -38,49 +38,60 @@ func _physics_process(delta: float) -> void:
 			dead_state(delta)
 		SkeletonState.attack:
 			attack_state(delta)
-	
+
 	move_and_slide()
-	
+
 func go_to_walk_state():
-	status = SkeletonState.	walk
+	status = SkeletonState.walk
 	anim.play("walk")
-	
+
 func go_to_attack_state():
 	status = SkeletonState.attack
 	anim.play("attack")
 	velocity = Vector2.ZERO
 	can_throw = true
-	
-		
+
 func go_to_dead_state():
+	if status == SkeletonState.dead:
+		return
+
 	status = SkeletonState.dead
 	anim.play("dead")
 	hitbox.process_mode = Node.PROCESS_MODE_DISABLED
-	velocity = Vector2.ZERO
-	
+	velocity.x = 0
+	can_throw = false
+
 func walk_state(_delta):
-	velocity.x = SPEED * direction
+	if anim.frame == 3 or anim.frame == 4:
+		velocity.x = SPEED * direction
+	else:
+		velocity.x = 0
 	
+
 	if wall_detector.is_colliding():
 		scale.x *= -1
 		direction *= -1
-	
+
 	if not ground_detector.is_colliding():
 		scale.x *= -1
 		direction *= -1
-		
+
 	if player_detector.is_colliding():
 		go_to_attack_state()
-		return		
+		return
+
 func attack_state(_delta):
-	if anim.frame == 2 && can_throw:
+	if anim.frame == 2 and can_throw:
 		throw_bone()
 		can_throw = false
-	
+
 func dead_state(_delta):
 	pass
 
 func take_damage():
+	if status == SkeletonState.dead:
+		return
+
 	go_to_dead_state()
 
 func throw_bone():
@@ -89,8 +100,11 @@ func throw_bone():
 	new_bone.position = bone_start_position.global_position
 	new_bone.set_direction(self.direction)
 
-
 func _on_animated_sprite_2d_animation_finished() -> void:
+	if anim.animation == "dead":
+		queue_free()
+		return
+
 	if anim.animation == "attack":
 		go_to_walk_state()
 		return

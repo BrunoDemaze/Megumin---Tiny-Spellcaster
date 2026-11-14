@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://7isn0bpcwvmp" path="res://sprites/3 - Skeleton/Spinning_Bone (16 x 16).png" id="1_ecbwy"]
 [ext_resource type="Script" uid="uid://c2q5j5bocrse1" path="res://scripts/spinning_bone.gd" id="1_qqc7g"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_86ap7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0i88t"]
 radius = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqc7g"]
@@ -22,7 +22,7 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("1_ecbwy")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_86ap7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -39,27 +39,25 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 8.0
+"speed": 7.0
 }]
 
-[node name="SpinningBone" type="Area2D" unique_id=1063151453]
-collision_layer = 17
+[node name="SpinningBone" type="Area2D" unique_id=46569768]
+collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_qqc7g")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1415461426]
-shape = SubResource("CircleShape2D_86ap7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698904347]
+shape = SubResource("CircleShape2D_0i88t")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=305237362]
-sprite_frames = SubResource("SpriteFrames_86ap7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=882331525]
+sprite_frames = SubResource("SpriteFrames_0i88t")
 autoplay = "default"
-frame_progress = 0.46533325
 
-[node name="SelfDestructTimer" type="Timer" parent="." unique_id=976170281]
+[node name="SelfDestructTimer" type="Timer" parent="." unique_id=697198918]
 wait_time = 8.0
 one_shot = true
 autostart = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="SelfDestructTimer" to="." method="_on_self_destruct_timer_timeout"]
