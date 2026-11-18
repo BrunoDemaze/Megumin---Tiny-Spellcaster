@@ -1,0 +1,59 @@
+[gd_resource type="Theme" format=3 uid="uid://bgrmdyvav131w"]
+
+[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://fonts/PeaberryDoublespace.ttf" id="1_wfmu7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgk3l"]
+bg_color = Color(0.43295246, 0.09876979, 0.20202622, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7483928, 0.008404761, 0.29331675, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kphaj"]
+bg_color = Color(0.43295246, 0.09876979, 0.20202622, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7483928, 0.008404761, 0.29331675, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmvo1"]
+bg_color = Color(0.87409574, 0.31283468, 0.46723133, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7483928, 0.008404761, 0.29331675, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yn2j"]
+bg_color = Color(0.43295246, 0.09876979, 0.20202622, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7483928, 0.008404761, 0.29331675, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+default_font = ExtResource("1_wfmu7")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_qgk3l")
+Button/styles/hover = SubResource("StyleBoxFlat_kphaj")
+Button/styles/normal = SubResource("StyleBoxFlat_tmvo1")
+Button/styles/pressed = SubResource("StyleBoxFlat_0yn2j")
