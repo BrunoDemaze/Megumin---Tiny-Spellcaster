@@ -56,10 +56,14 @@ func go_to_dead_state():
 		return
 
 	status = SkeletonState.dead
+
+	GameManager.enemy_defeated(50)
+
 	anim.play("dead")
 	hitbox.process_mode = Node.PROCESS_MODE_DISABLED
 	velocity.x = 0
 	can_throw = false
+
 
 func walk_state(_delta):
 	if anim.frame == 3 or anim.frame == 4:

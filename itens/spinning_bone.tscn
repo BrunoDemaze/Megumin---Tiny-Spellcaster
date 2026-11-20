@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmqvu67wqeebk"]
 
 [ext_resource type="Texture2D" uid="uid://7isn0bpcwvmp" path="res://sprites/3 - Skeleton/Spinning_Bone (16 x 16).png" id="1_ecbwy"]
-[ext_resource type="Script" uid="uid://c2q5j5bocrse1" path="res://scripts/spinning_bone.gd" id="1_qqc7g"]
+[ext_resource type="Script" uid="uid://c2q5j5bocrse1" path="res://scripts/Enemy_related/spinning_bone.gd" id="1_qqc7g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0i88t"]
 radius = 5.0

@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
+	GameManager.start_new_run()
 	get_tree().change_scene_to_file("res://scene/game.tscn")
 
 

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cfl02smjn3ael"]
 
-[ext_resource type="Script" uid="uid://hhnkxsfds6ga" path="res://scripts/game_over.gd" id="1_bc2bx"]
-[ext_resource type="Theme" uid="uid://bl7q5e61neo2i" path="res://default_buttons.tres" id="1_mxr41"]
+[ext_resource type="Script" uid="uid://hhnkxsfds6ga" path="res://scripts/Game_related/game_over.gd" id="1_bc2bx"]
+[ext_resource type="Theme" uid="uid://bl7q5e61neo2i" path="res://Start_screan/default_buttons.tres" id="1_mxr41"]
 [ext_resource type="Texture2D" uid="uid://cbrgevxsnx2jv" path="res://sprites/game_over.png" id="2_bc2bx"]
+
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0i88t"]
 

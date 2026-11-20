@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bgrmdyvav131w"]
 
-[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://fonts/PeaberryDoublespace.ttf" id="1_wfmu7"]
+[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="1_wfmu7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgk3l"]
 bg_color = Color(0.43295246, 0.09876979, 0.20202622, 1)

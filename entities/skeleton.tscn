@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cht0huet1ye4n"]
 
-[ext_resource type="Script" uid="uid://bim0wrgc8qvlm" path="res://scripts/skeleton.gd" id="1_yag7t"]
+[ext_resource type="Script" uid="uid://bim0wrgc8qvlm" path="res://scripts/Enemy_related/skeleton.gd" id="1_yag7t"]
 [ext_resource type="Texture2D" uid="uid://k5skr8d18s0d" path="res://sprites/3 - Skeleton/Bone_Toss (32 x 32).png" id="2_4oc3b"]
 [ext_resource type="Texture2D" uid="uid://b36lwei4ih2a0" path="res://sprites/3 - Skeleton/Crumbling_Into_Bone_Pile (32 x 32).png" id="2_fpmxe"]
 [ext_resource type="Texture2D" uid="uid://dwib1kfdku0ds" path="res://sprites/3 - Skeleton/Limping_Movement (32 x 32).png" id="3_4oc3b"]

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dw4tdoxq73oyt"]
 
-[ext_resource type="Script" uid="uid://dyh14aur68lfw" path="res://scripts/spell_orbs.gd" id="1_kjir0"]
+[ext_resource type="Script" uid="uid://dyh14aur68lfw" path="res://scripts/Player_related/spell_orbs.gd" id="1_kjir0"]
 [ext_resource type="Texture2D" uid="uid://bsfvh64yoid4a" path="res://sprites/2 - Lil Wiz/Magical_Orbs_Spell_(32 x 32).png" id="2_c4fnh"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kmwvm"]
 radius = 7.0

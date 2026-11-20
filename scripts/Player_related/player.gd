@@ -33,7 +33,7 @@ var previous_status: PlayerState
 var health = 3
 var invulnerable = false
 var blink_tween: Tween
-
+var coin_counter = 0
 
 func _ready() -> void:
 	health = max_health
@@ -122,7 +122,11 @@ func go_to_dead_state():
 
 	await get_tree().create_timer(3.0).timeout
 
-	get_tree().reload_current_scene()
+	GameManager.finish_run()
+
+	get_tree().change_scene_to_file(
+		"res://scene/game_over.tscn"
+)
 
 
 func exit_from_duck_state():
@@ -335,10 +339,23 @@ func start_invulnerability():
 # COLISÕES ORIGINAIS
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Enemies"):
+
+	if area.is_in_group("coin"):
+
+		GameManager.add_coin(10)
+
+		print("Moedas: ", GameManager.coins)
+		print("Pontuação: ", GameManager.score)
+
+		area.queue_free()
+
+	elif area.is_in_group("Enemies"):
 		hit_enemy(area)
+
 	elif area.is_in_group("lethalArea"):
 		hit_lethal_area()
+
+
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("LethalArea"):
@@ -354,3 +371,6 @@ func hit_enemy(area: Area2D):
 
 func hit_lethal_area():
 	go_to_dead_state()
+
+func set_coin(new_coin_count: int) -> void:
+	coin_counter = new_coin_count

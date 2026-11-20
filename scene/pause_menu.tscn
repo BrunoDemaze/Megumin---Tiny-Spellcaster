@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d4if04ie7kuur"]
+
+[ext_resource type="Script" uid="uid://c3yfwydn3ljlf" path="res://scripts/Game_related/pause_menu.gd" id="1_grdc7"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2020289742]
+script = ExtResource("1_grdc7")
+
+[node name="Panel" type="Panel" parent="." unique_id=421280167]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="." unique_id=583801812]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ResumeButton" type="Button" parent="." unique_id=334830098]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MenuButton" type="Button" parent="." unique_id=1548959161]
+offset_right = 8.0
+offset_bottom = 8.0

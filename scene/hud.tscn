@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dap2fvvtbvyuw"]
+
+[ext_resource type="Script" uid="uid://f1hd02ea584v" path="res://scripts/Game_related/hud.gd" id="1_s3k51"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1354084769]
+script = ExtResource("1_s3k51")
+
+[node name="ScoreShow" type="Label" parent="." unique_id=1545460478]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CoinsLabel" type="Label" parent="." unique_id=519526225]
+offset_right = 40.0
+offset_bottom = 23.0
