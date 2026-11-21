@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bcsuybusmfjim"]
+
+[ext_resource type="Script" uid="uid://c8gwjhonna65k" path="res://scripts/Game_related/heart_drop.gd" id="1_pvv4g"]
+[ext_resource type="Texture2D" uid="uid://cpulo5gfy4va6" path="res://sprites/Mini FX, Items & UI (1)/Mini FX, Items & UI/Common Pick-ups/Heart_Spin (16 x 16).png" id="1_tine2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sica4"]
+atlas = ExtResource("1_tine2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8b0r"]
+atlas = ExtResource("1_tine2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twpqr"]
+atlas = ExtResource("1_tine2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utm0e"]
+atlas = ExtResource("1_tine2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckb4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sica4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8b0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twpqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utm0e")
+}],
+"loop": 1,
+"name": &"heart_spin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0i88t"]
+radius = 4.0
+
+[node name="Heart_drop" type="Area2D" unique_id=1719290331]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_pvv4g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1029981799]
+position = Vector2(0.5, 0)
+scale = Vector2(1.0625, 1)
+sprite_frames = SubResource("SpriteFrames_ckb4l")
+animation = &"heart_spin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1813957752]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_0i88t")

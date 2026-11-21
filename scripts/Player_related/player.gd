@@ -7,6 +7,7 @@ enum PlayerState{
 	jump,
 	fall,
 	duck,
+	damage,
 	dead,
 	spell
 }
@@ -25,12 +26,13 @@ var direction = 0
 var status: PlayerState
 var spell_created = false
 var previous_status: PlayerState
+var hearts_list: Array[AnimatedSprite2D]
+var health = 3
 
 # NOVO: SISTEMA DE VIDA
 @export var max_health = 3
-@export var invulnerability_time = 2.0
+@export var invulnerability_time = 1.0
 
-var health = 3
 var invulnerable = false
 var blink_tween: Tween
 var coin_counter = 0
@@ -41,6 +43,14 @@ func _ready() -> void:
 
 	if not anim.animation_finished.is_connected(_on_animated_sprite_2d_animation_finished):
 		anim.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
+
+	var hearts_parent = $health_bar/HBoxContainer
+
+	for child in hearts_parent.get_children():
+		var heart = child.get_node("Heart")
+		hearts_list.append(heart)
+
+	print(hearts_list)
 
 
 func _physics_process(delta: float) -> void:
@@ -59,6 +69,8 @@ func _physics_process(delta: float) -> void:
 			fall_state()
 		PlayerState.duck:
 			duck_state()
+		PlayerState.damage:
+			damage_state()    
 		PlayerState.dead:
 			dead_state()
 		PlayerState.spell:
@@ -105,6 +117,11 @@ func go_to_duck_state():
 
 	hitbox_collision_shape.shape.size.y = 10
 	hitbox_collision_shape.position.y = 5
+	
+func go_to_damage_state():
+	status = PlayerState.damage
+	anim.play("damage")
+	velocity.x = 0
 
 
 func go_to_dead_state():
@@ -120,7 +137,7 @@ func go_to_dead_state():
 
 	anim.modulate = Color.WHITE
 
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1.0).timeout
 
 	GameManager.finish_run()
 
@@ -195,6 +212,25 @@ func spell_state():
 
 func _on_animated_sprite_2d_animation_finished():
 
+	if status == PlayerState.damage:
+		if not is_on_floor():
+			if velocity.y < 0:
+				status = PlayerState.jump
+				anim.play("jump")
+			else:
+				go_to_fall_state()
+
+		elif Input.is_action_pressed("duck"):
+			go_to_duck_state()
+
+		elif Input.get_axis("left", "right") != 0:
+			go_to_walk_state()
+
+		else:
+			go_to_idle_state()
+
+		return
+
 	if status != PlayerState.spell:
 		return
 
@@ -217,6 +253,19 @@ func _on_animated_sprite_2d_animation_finished():
 
 func jump_state():
 	move()
+	
+
+	if Input.is_action_just_pressed("magic"):
+		go_to_spell_state()
+		return
+
+	if Input.is_action_just_pressed("jump") && can_jump():
+		go_to_jump_state()
+		return
+
+	if velocity.y > 0:
+		go_to_fall_state()
+		return
 
 	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
@@ -261,6 +310,9 @@ func temp(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 
+func damage_state():
+	velocity.x = 0
+
 func dead_state():
 	velocity.x = 0
 
@@ -296,12 +348,15 @@ func take_damage():
 	health -= 1
 	print("Vida: ", health)
 
+	if health >= 0 and health < hearts_list.size():
+		hearts_list[health].play("hurt")
+
 	if health <= 0:
 		go_to_dead_state()
 		return
 
+	go_to_damage_state()
 	start_invulnerability()
-
 
 # NOVO: INVULNERABILIDADE DE 2 SEGUNDOS
 

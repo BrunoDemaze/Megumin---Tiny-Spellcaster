@@ -1,8 +1,7 @@
 extends Control
 
-@onready var final_score_label: Label = $CenterContainer/Panel/VBoxContainer/FinalScoreLabel
-
-@onready var highscores_label: Label = $CenterContainer/Panel/VBoxContainer/HighscoresLabel
+@onready var final_score_label: Label = $VBoxContainer/FinalScore
+@onready var highscores_label: Label = $VBoxContainer/Highscores
 
 
 func _ready() -> void:
@@ -28,15 +27,9 @@ func update_highscores() -> void:
 	highscores_label.text = text_result
 
 
-func _on_restart_button_pressed() -> void:
-	GameManager.start_new_run()
-
-	get_tree().change_scene_to_file(
-		"res://cenas/level_1.tscn"
-	)
+func _on_restart_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/title_screen.tscn")
 
 
-func _on_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file(
-		"res://cenas/main_menu.tscn"
-	)
+func _on_quit_pressed() -> void:
+	get_tree().quit()

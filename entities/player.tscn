@@ -8,10 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://dv3o4c0yommf7" path="res://sprites/2 - Lil Wiz/Jumping_(32 x 32).png" id="3_rfe5m"]
 [ext_resource type="Texture2D" uid="uid://beh2doivhcihs" path="res://sprites/2 - Lil Wiz/Hurt_(32 x 32).png" id="4_6nm46"]
 [ext_resource type="Texture2D" uid="uid://cl6ibk5q24cau" path="res://sprites/2 - Lil Wiz/Casting_Spell_(32 x 32).png" id="8_ef06p"]
+[ext_resource type="Texture2D" uid="uid://bm5gpnebrxuaq" path="res://sprites/Pixel Heart Animation GIFs & Spritesheets, 32x32 and 16x16/Pixel Heart Sprite Sheet 16x16.png" id="9_ef06p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dp3pk"]
 radius = 7.0
 height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28s6d"]
+atlas = ExtResource("4_6nm46")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgp7q"]
 atlas = ExtResource("4_6nm46")
@@ -91,6 +96,14 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28s6d")
+}],
+"loop": 0,
+"name": &"damage",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cgp7q")
@@ -190,6 +203,35 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86ap7"]
 size = Vector2(12, 18)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_evlff"]
+atlas = ExtResource("9_ef06p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7db53"]
+atlas = ExtResource("9_ef06p")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plaij"]
+atlas = ExtResource("9_ef06p")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ib8tg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evlff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7db53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plaij")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1704222957 groups=["Player"]]
 collision_layer = 2
 collision_mask = 9
@@ -205,7 +247,7 @@ z_index = 1
 position = Vector2(0, -3.506)
 scale = Vector2(0.834961, 0.85036063)
 sprite_frames = SubResource("SpriteFrames_0i88t")
-animation = &"spell"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1547415054]
@@ -217,6 +259,42 @@ z_index = 3
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_86ap7")
 debug_color = Color(0.93277043, 0.18740487, 0.46009874, 0.41960785)
+
+[node name="health_bar" type="CanvasLayer" parent="." unique_id=1102506039]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar" unique_id=1890745746]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=1982370736]
+custom_maximum_size = Vector2(0, -1)
+layout_mode = 2
+
+[node name="Heart" type="AnimatedSprite2D" parent="health_bar/HBoxContainer/heart" unique_id=1891506019]
+position = Vector2(9.999999, 9.000001)
+scale = Vector2(0.6249999, 0.625)
+sprite_frames = SubResource("SpriteFrames_ib8tg")
+animation = &"hurt"
+
+[node name="heart3" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=1508262629]
+custom_maximum_size = Vector2(0, -1)
+layout_mode = 2
+
+[node name="Heart" type="AnimatedSprite2D" parent="health_bar/HBoxContainer/heart3" unique_id=11030660]
+position = Vector2(16, 9.000001)
+scale = Vector2(0.6249999, 0.625)
+sprite_frames = SubResource("SpriteFrames_ib8tg")
+animation = &"hurt"
+
+[node name="heart2" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=70388313]
+custom_maximum_size = Vector2(0, -1)
+layout_mode = 2
+
+[node name="Heart" type="AnimatedSprite2D" parent="health_bar/HBoxContainer/heart2" unique_id=964892437]
+position = Vector2(22, 9.000001)
+scale = Vector2(0.6249999, 0.625)
+sprite_frames = SubResource("SpriteFrames_ib8tg")
+animation = &"hurt"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

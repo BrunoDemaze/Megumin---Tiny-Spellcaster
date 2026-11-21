@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dadwex6b4sno"]
+
+[ext_resource type="Texture2D" uid="uid://bm5gpnebrxuaq" path="res://sprites/Pixel Heart Animation GIFs & Spritesheets, 32x32 and 16x16/Pixel Heart Sprite Sheet 16x16.png" id="1_gvccr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evlff"]
+atlas = ExtResource("1_gvccr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7db53"]
+atlas = ExtResource("1_gvccr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plaij"]
+atlas = ExtResource("1_gvccr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evlff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7db53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plaij")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 5.0
+}]
+
+[node name="Heart" type="AnimatedSprite2D" unique_id=98593845]
+sprite_frames = SubResource("SpriteFrames_0i88t")
+animation = &"hurt"

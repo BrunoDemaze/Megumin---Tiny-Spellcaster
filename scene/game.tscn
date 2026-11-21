@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dwscrf2m8xjx3" path="res://entities/camera.tscn" id="12_sng2h"]
 [ext_resource type="PackedScene" uid="uid://l30ran2145x3" path="res://entities/level_end.tscn" id="13_5g16k"]
 [ext_resource type="PackedScene" uid="uid://b43wksibcj1av" path="res://entities/coin.tscn" id="16_0lu6w"]
+[ext_resource type="PackedScene" uid="uid://dkh0740eeoj4t" path="res://entities/bau.tscn" id="16_i6gbm"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ym5sv"]
 tile_data = PackedInt32Array(0, 589824, 3, 1, 655360, 3, 2, 786432, 3, 3, 851968, 3)
@@ -305,5 +306,8 @@ position = Vector2(87, 107)
 
 [node name="coin3" parent="." unique_id=2099523367 instance=ExtResource("16_0lu6w")]
 position = Vector2(100, 107)
+
+[node name="Bau" parent="." unique_id=447655876 instance=ExtResource("16_i6gbm")]
+position = Vector2(281, 136)
 
 [editable path="LevelEnd"]

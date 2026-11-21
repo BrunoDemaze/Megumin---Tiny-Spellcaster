@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://hhnkxsfds6ga" path="res://scripts/Game_related/game_over.gd" id="1_bc2bx"]
 [ext_resource type="Theme" uid="uid://bl7q5e61neo2i" path="res://Start_screan/default_buttons.tres" id="1_mxr41"]
 [ext_resource type="Texture2D" uid="uid://cbrgevxsnx2jv" path="res://sprites/game_over.png" id="2_bc2bx"]
-
+[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="4_6pabp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0i88t"]
 
@@ -86,6 +86,7 @@ offset_top = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_mxr41")
 color = Color(0, 0, 0, 1)
 
@@ -112,20 +113,34 @@ texture = ExtResource("2_bc2bx")
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_0i88t")
 
+[node name="FinalScore" type="Label" parent="VBoxContainer" unique_id=778322068]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_6pabp")
+theme_override_font_sizes/font_size = 7
+
+[node name="Highscores" type="Label" parent="VBoxContainer" unique_id=704943554]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_6pabp")
+theme_override_font_sizes/font_size = 5
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=1635745033]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0i88t")
+
 [node name="Restart" type="Button" parent="VBoxContainer" unique_id=502727998]
 layout_mode = 2
 theme = ExtResource("1_mxr41")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 10
 text = "RESTART"
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=1635745033]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer" unique_id=1101961082]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_0i88t")
 
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=2095270817]
 layout_mode = 2
 theme = ExtResource("1_mxr41")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 10
 text = "QUIT GAME"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2009976481]
