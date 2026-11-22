@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://beh2doivhcihs" path="res://sprites/2 - Lil Wiz/Hurt_(32 x 32).png" id="4_6nm46"]
 [ext_resource type="Texture2D" uid="uid://cl6ibk5q24cau" path="res://sprites/2 - Lil Wiz/Casting_Spell_(32 x 32).png" id="8_ef06p"]
 [ext_resource type="Texture2D" uid="uid://bm5gpnebrxuaq" path="res://sprites/Pixel Heart Animation GIFs & Spritesheets, 32x32 and 16x16/Pixel Heart Sprite Sheet 16x16.png" id="9_ef06p"]
+[ext_resource type="AudioStream" uid="uid://dohl3hnrqqqg1" path="res://sounds/458641__lilmati__retro-jump-02.wav" id="10_tjdhl"]
+[ext_resource type="AudioStream" uid="uid://bbdmcs3lr0nac" path="res://sounds/554825__garuda1982__walking-steps-on-cracked-ice-crust-sound-effect.wav" id="11_x08pd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dp3pk"]
 radius = 7.0
@@ -295,6 +297,14 @@ position = Vector2(22, 9.000001)
 scale = Vector2(0.6249999, 0.625)
 sprite_frames = SubResource("SpriteFrames_ib8tg")
 animation = &"hurt"
+
+[node name="jump_wav" type="AudioStreamPlayer" parent="." unique_id=891602026]
+stream = ExtResource("10_tjdhl")
+volume_db = -8.0
+
+[node name="walk_wav" type="AudioStreamPlayer" parent="." unique_id=599631796]
+stream = ExtResource("11_x08pd")
+volume_db = -8.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

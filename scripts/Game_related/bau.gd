@@ -4,12 +4,16 @@ extends AnimatedSprite2D
 const HEART_DROP = preload("res://entities/heart_drop.tscn")
 const COIN_DROP = preload("res://entities/coin.tscn")
 
+@onready var chest_wav: AudioStreamPlayer = $chest_wav
+@onready var empty_smoke: AnimatedSprite2D = $empty_smoke
+
 var player_nearby = false
 var opened = false
 
 
 func _ready() -> void:
 	play("closed")
+	empty_smoke.hide()
 
 
 func _process(_delta: float) -> void:
@@ -21,6 +25,7 @@ func _process(_delta: float) -> void:
 func open_chest() -> void:
 	opened = true
 	play("open")
+	chest_wav.play()
 
 	var chance = randf()
 
@@ -31,13 +36,19 @@ func open_chest() -> void:
 		drop_coin()
 
 	else:
-		pass
+		empty_smoke.show()
+		empty_smoke.play("default")
+
+		await get_tree().create_timer(1.5).timeout
+
+		empty_smoke.hide()
 
 
 func drop_heart() -> void:
 	var heart_instance = HEART_DROP.instantiate()
 	get_parent().add_child(heart_instance)
 	heart_instance.global_position = global_position + Vector2(0, -20)
+
 
 func drop_coin() -> void:
 	var coin_instance = COIN_DROP.instantiate()

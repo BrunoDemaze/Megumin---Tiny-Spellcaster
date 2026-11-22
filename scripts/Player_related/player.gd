@@ -15,6 +15,8 @@ enum PlayerState{
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var hitbox_collision_shape: CollisionShape2D = $Hitbox/CollisionShape2D
+@onready var jump_wav: AudioStreamPlayer = $jump_wav as AudioStreamPlayer
+@onready var walk_wav: AudioStreamPlayer = $walk_wav
 
 const SPEED = 65.0
 const JUMP_VELOCITY = -300.0
@@ -31,11 +33,13 @@ var health = 3
 
 # NOVO: SISTEMA DE VIDA
 @export var max_health = 3
-@export var invulnerability_time = 1.0
+@export var invulnerability_time = 2.0
 
 var invulnerable = false
 var blink_tween: Tween
 var coin_counter = 0
+
+
 
 func _ready() -> void:
 	health = max_health
@@ -99,6 +103,7 @@ func go_to_spell_state():
 func go_to_jump_state():
 	status = PlayerState.jump
 	anim.play("jump")
+	jump_wav.play()
 	velocity.y = JUMP_VELOCITY
 	jump_count += 1
 
@@ -178,19 +183,26 @@ func idle_state():
 func walk_state():
 	move()
 
+	if not walk_wav.playing:
+		walk_wav.play()
+
 	if Input.is_action_just_pressed("magic"):
+		walk_wav.stop()
 		go_to_spell_state()
 		return
 
 	if velocity.x == 0:
+		walk_wav.stop()
 		go_to_idle_state()
 		return
 
 	if Input.is_action_just_pressed("jump"):
+		walk_wav.stop()
 		go_to_jump_state()
 		return
 
 	if !is_on_floor():
+		walk_wav.stop()
 		go_to_fall_state()
 		return
 
@@ -401,10 +413,14 @@ func start_invulnerability():
 # COLISÕES ORIGINAIS
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-
 	if area.is_in_group("coin"):
-
 		GameManager.add_coin(10)
+
+		var som = area.get_node("coin_wav")
+		area.set_deferred("monitoring", false)
+		area.hide()
+		som.play()
+		await som.finished
 
 		print("Moedas: ", GameManager.coins)
 		print("Pontuação: ", GameManager.score)
@@ -416,7 +432,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 	elif area.is_in_group("lethalArea"):
 		hit_lethal_area()
-
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

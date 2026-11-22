@@ -2,9 +2,10 @@ extends Control
 
 @onready var final_score_label: Label = $VBoxContainer/FinalScore
 @onready var highscores_label: Label = $VBoxContainer/Highscores
-
+@onready var over_wav: AudioStreamPlayer = $over_wav
 
 func _ready() -> void:
+	over_wav.play()
 	GameManager.finish_run()
 
 	final_score_label.text = "Pontuação final: " + str(GameManager.score)

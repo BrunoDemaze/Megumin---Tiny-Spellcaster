@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://bgrmdyvav131w" path="res://Start_screan/default_button_2.tres" id="2_wxbcn"]
 [ext_resource type="Texture2D" uid="uid://dv3o4c0yommf7" path="res://sprites/2 - Lil Wiz/Jumping_(32 x 32).png" id="3_j6oad"]
 [ext_resource type="Texture2D" uid="uid://b7mv18c7n30d5" path="res://logo.png" id="3_ulgj7"]
+[ext_resource type="AudioStream" uid="uid://bmlsrp2v8jtte" path="res://sounds/114204__multichampion__bg_sound2.mp3" id="6_ulgj7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ulgj7"]
 
@@ -169,6 +170,10 @@ flip_h = true
 [node name="Anim" type="AnimationPlayer" parent="." unique_id=1155860723]
 libraries/ = SubResource("AnimationLibrary_ulgj7")
 autoplay = &"reveal"
+
+[node name="main_wav" type="AudioStreamPlayer" parent="." unique_id=759580672]
+stream = ExtResource("6_ulgj7")
+volume_db = -8.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits" to="." method="_on_credits_pressed"]

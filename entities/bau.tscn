@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dttm1fd3h5sr5" path="res://sprites/Mini FX, Items & UI (1)/Mini FX, Items & UI/Common Pick-ups/Treasure_Chest (32 x 16).png" id="1_phpv1"]
 [ext_resource type="Script" uid="uid://kbelj068vege" path="res://scripts/Game_related/bau.gd" id="2_v2841"]
+[ext_resource type="AudioStream" uid="uid://dsod4veibv4fc" path="res://sounds/872674__heyheytheree__chest-open-fantasy-ui-sfx-free.wav" id="3_mn8em"]
+[ext_resource type="Texture2D" uid="uid://cuilaxnpra8p6" path="res://sprites/Mini FX, Items & UI (1)/Mini FX, Items & UI/Effects/Cloud_Poof (16 x 16).png" id="4_kksq5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v2841"]
 atlas = ExtResource("1_phpv1")
@@ -47,6 +49,28 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0i88t"]
 size = Vector2(18, 14)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4qyt"]
+atlas = ExtResource("4_kksq5")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8mid"]
+atlas = ExtResource("4_kksq5")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3si4x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4qyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8mid")
+}],
+"loop": 0,
+"name": &"smoke",
+"speed": 4.0
+}]
+
 [node name="Bau" type="AnimatedSprite2D" unique_id=447655876]
 sprite_frames = SubResource("SpriteFrames_0i88t")
 animation = &"open"
@@ -59,6 +83,18 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=246115141]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_0i88t")
+
+[node name="chest_wav" type="AudioStreamPlayer" parent="." unique_id=396492819]
+stream = ExtResource("3_mn8em")
+volume_db = -8.0
+
+[node name="empty_smoke" type="AnimatedSprite2D" parent="." unique_id=1440067072]
+visible = false
+position = Vector2(0, -20)
+rotation = -1.5358897
+scale = Vector2(0.640625, 0.65625)
+sprite_frames = SubResource("SpriteFrames_3si4x")
+animation = &"smoke"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

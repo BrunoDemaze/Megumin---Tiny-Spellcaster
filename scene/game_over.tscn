@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://bl7q5e61neo2i" path="res://Start_screan/default_buttons.tres" id="1_mxr41"]
 [ext_resource type="Texture2D" uid="uid://cbrgevxsnx2jv" path="res://sprites/game_over.png" id="2_bc2bx"]
 [ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="4_6pabp"]
+[ext_resource type="AudioStream" uid="uid://cf3e72ddc7fam" path="res://sounds/173859__jivatma07__j1game_over_mono.wav" id="5_ooyig"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0i88t"]
 
@@ -146,6 +147,10 @@ text = "QUIT GAME"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2009976481]
 libraries/ = SubResource("AnimationLibrary_6pabp")
 autoplay = &"fade_in"
+
+[node name="over_wav" type="AudioStreamPlayer" parent="." unique_id=1774702000]
+stream = ExtResource("5_ooyig")
+volume_db = -8.0
 
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

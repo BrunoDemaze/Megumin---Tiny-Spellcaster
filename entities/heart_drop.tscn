@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8gwjhonna65k" path="res://scripts/Game_related/heart_drop.gd" id="1_pvv4g"]
 [ext_resource type="Texture2D" uid="uid://cpulo5gfy4va6" path="res://sprites/Mini FX, Items & UI (1)/Mini FX, Items & UI/Common Pick-ups/Heart_Spin (16 x 16).png" id="1_tine2"]
+[ext_resource type="AudioStream" uid="uid://g1ay1o2mi3e3" path="res://sounds/coin_wav.wav" id="3_sica4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sica4"]
 atlas = ExtResource("1_tine2")
@@ -56,3 +57,7 @@ animation = &"heart_spin"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1813957752]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_0i88t")
+
+[node name="collect_wav" type="AudioStreamPlayer" parent="." unique_id=1034350931]
+stream = ExtResource("3_sica4")
+volume_db = -8.0
