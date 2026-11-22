@@ -1,14 +1,27 @@
 [gd_scene format=3 uid="uid://dap2fvvtbvyuw"]
 
 [ext_resource type="Script" uid="uid://f1hd02ea584v" path="res://scripts/Game_related/hud.gd" id="1_s3k51"]
+[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="2_o8u2p"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1354084769]
+scale = Vector2(0.7, 0.7)
+transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
 script = ExtResource("1_s3k51")
 
 [node name="ScoreShow" type="Label" parent="." unique_id=1545460478]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_top = 0.003
+anchor_right = 0.004
+anchor_bottom = 0.0050000004
+offset_top = 22.233143
+offset_right = 85.4
+offset_bottom = 44.81714
+theme_override_fonts/font = ExtResource("2_o8u2p")
+text = "Pontos: 0"
 
-[node name="CoinsLabel" type="Label" parent="." unique_id=519526225]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="TimeLabel" type="Label" parent="." unique_id=1256990017]
+offset_left = 515.7143
+offset_top = 10.0
+offset_right = 555.7143
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_o8u2p")

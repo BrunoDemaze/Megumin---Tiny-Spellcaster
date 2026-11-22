@@ -1,10 +1,46 @@
 [gd_scene format=3 uid="uid://b43wksibcj1av"]
 
 [ext_resource type="Script" uid="uid://fmu7x53tqhop" path="res://scripts/Game_related/coin.gd" id="1_a182a"]
-[ext_resource type="Texture2D" uid="uid://cbv1mu3308w7a" path="res://sprites/coin/Coin.png" id="1_cg25x"]
+[ext_resource type="Texture2D" uid="uid://pvd2bhbmejg4" path="res://sprites/Mini FX, Items & UI (1)/Mini FX, Items & UI/Common Pick-ups/Coin (16 x 16).png" id="2_a182a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0i88t"]
 radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0yd8"]
+atlas = ExtResource("2_a182a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rte4k"]
+atlas = ExtResource("2_a182a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o8c7"]
+atlas = ExtResource("2_a182a")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r21wx"]
+atlas = ExtResource("2_a182a")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0yd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rte4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o8c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r21wx")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 6.0
+}]
 
 [node name="coin" type="Area2D" unique_id=892856175 groups=["coin"]]
 collision_layer = 2
@@ -14,6 +50,8 @@ script = ExtResource("1_a182a")
 scale = Vector2(0.55, 0.55)
 shape = SubResource("CircleShape2D_0i88t")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=532797036]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_cg25x")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=689727193]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_0i88t")
+animation = &"spin"
+frame_progress = 0.9025643

@@ -1,8 +1,8 @@
 
 extends CanvasLayer
 
-@onready var score_label: Label = $ScoreLabel
-@onready var coins_label: Label = $CoinsLabel
+@onready var score_label: Label = $ScoreShow
+@onready var time_label: Label = $TimeLabel
 
 
 func _ready() -> void:
@@ -11,18 +11,24 @@ func _ready() -> void:
 	if not GameManager.score_changed.is_connected(update_score):
 		GameManager.score_changed.connect(update_score)
 
-	# Conecta as moedas
-	if not GameManager.coins_changed.is_connected(update_coins):
-		GameManager.coins_changed.connect(update_coins)
-
 	# Atualiza os valores iniciais
 	update_score(GameManager.score)
-	update_coins(GameManager.coins)
+	update_timer()
+
+
+func _process(_delta: float) -> void:
+	update_timer()
 
 
 func update_score(new_score: int) -> void:
 	score_label.text = "Pontos: " + str(new_score)
 
 
-func update_coins(new_coins: int) -> void:
-	coins_label.text = "Moedas: " + str(new_coins)
+func update_timer() -> void:
+
+	var total_seconds = int(GameManager.total_time)
+
+	var minutes = int(total_seconds / 60)
+	var seconds = total_seconds % 60
+
+	time_label.text = "%02d:%02d" % [minutes, seconds]

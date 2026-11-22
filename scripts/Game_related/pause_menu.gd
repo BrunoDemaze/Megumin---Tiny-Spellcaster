@@ -32,9 +32,14 @@ func _on_resume_button_pressed() -> void:
 
 
 func _on_menu_button_pressed() -> void:
+
+	# Despausa antes de trocar de cena
 	get_tree().paused = false
+
+	# Para o cronômetro
 	GameManager.pause_timer()
 
+	# Volta para a tela inicial
 	get_tree().change_scene_to_file(
-		"res://scene/pause_menu.tscn"
+        "res://scene/title_screen.tscn"
 	)

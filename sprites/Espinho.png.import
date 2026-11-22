@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbv1mu3308w7a"
-path="res://.godot/imported/Coin.png-b517fcd44dced9d4d0b1ec484e61e56e.ctex"
+uid="uid://yd5buomrrqqa"
+path="res://.godot/imported/Espinho.png-586b215be26f1a78922e60c68febdd4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/coin/Coin.png"
-dest_files=["res://.godot/imported/Coin.png-b517fcd44dced9d4d0b1ec484e61e56e.ctex"]
+source_file="res://sprites/Espinho.png"
+dest_files=["res://.godot/imported/Espinho.png-586b215be26f1a78922e60c68febdd4d.ctex"]
 
 [params]
 

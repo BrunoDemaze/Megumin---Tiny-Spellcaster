@@ -1,22 +1,44 @@
 [gd_scene format=3 uid="uid://d4if04ie7kuur"]
 
 [ext_resource type="Script" uid="uid://c3yfwydn3ljlf" path="res://scripts/Game_related/pause_menu.gd" id="1_grdc7"]
+[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="2_me6vf"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=2020289742]
+process_mode = 3
 script = ExtResource("1_grdc7")
 
 [node name="Panel" type="Panel" parent="." unique_id=421280167]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 402.0
+offset_bottom = 252.0
 
-[node name="Title" type="Label" parent="." unique_id=583801812]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Title" type="Label" parent="Panel" unique_id=583801812]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 24.0
+offset_right = 240.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("2_me6vf")
+theme_override_font_sizes/font_size = 26
+text = "Pause"
 
-[node name="ResumeButton" type="Button" parent="." unique_id=334830098]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="ResumeButton" type="Button" parent="Panel" unique_id=334830098]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 131.0
+offset_right = 264.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("2_me6vf")
+theme_override_font_sizes/font_size = 16
+text = "Continuar"
 
-[node name="MenuButton" type="Button" parent="." unique_id=1548959161]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="MenuButton" type="Button" parent="Panel" unique_id=1548959161]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 171.0
+offset_right = 265.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("2_me6vf")
+text = "Menu"
+
+[connection signal="pressed" from="Panel/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]

@@ -9,6 +9,7 @@ var coins: int = 0
 
 # CRONÔMETRO
 var elapsed_time: float = 0.0
+var total_time: float = 0.0
 var penalty_interval: float = 1.0
 var timer_running: bool = false
 
@@ -37,7 +38,8 @@ func _process(delta: float) -> void:
 		return
 
 	elapsed_time += delta
-
+	total_time += delta
+	
 	while elapsed_time >= penalty_interval:
 		elapsed_time -= penalty_interval
 		remove_score(1)
@@ -55,6 +57,11 @@ func add_score(points: int) -> void:
 func remove_score(points: int) -> void:
 	score = max(0, score - points)
 	score_changed.emit(score)
+
+
+func player_took_damage(points: int = 25) -> void:
+	remove_score(points)
+	print("Jogador recebeu dano! -", points, " pontos")
 
 
 func add_coin(points: int = 10) -> void:
@@ -92,6 +99,7 @@ func start_new_run() -> void:
 	score = 0
 	coins = 0
 	elapsed_time = 0.0
+	total_time = 0.0
 	timer_running = true
 	run_finished = false
 

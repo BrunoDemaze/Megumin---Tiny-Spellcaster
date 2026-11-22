@@ -341,12 +341,19 @@ func can_jump() -> bool:
 
 # NOVO: RECEBER DANO
 
+# RECEBER DANO
+
 func take_damage():
 	if status == PlayerState.dead or invulnerable:
 		return
 
 	health -= 1
+
+	# Remove 25 pontos ao receber dano
+	GameManager.player_took_damage(25)
+
 	print("Vida: ", health)
+	print("Pontuação: ", GameManager.score)
 
 	if health >= 0 and health < hearts_list.size():
 		hearts_list[health].play("hurt")
