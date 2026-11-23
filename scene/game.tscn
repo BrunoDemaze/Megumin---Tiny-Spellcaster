@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dap2fvvtbvyuw" path="res://scene/hud.tscn" id="17_i6gbm"]
 [ext_resource type="PackedScene" uid="uid://d4if04ie7kuur" path="res://scene/pause_menu.tscn" id="18_ux4dc"]
 [ext_resource type="AudioStream" uid="uid://evew5ghwf4ar" path="res://sounds/566208__awazixosh__its-time-for-an-adventure.wav" id="20_jhlss"]
+[ext_resource type="PackedScene" uid="uid://d3v5kf8mf84t8" path="res://entities/fly.tscn" id="20_ww6yf"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ym5sv"]
 tile_data = PackedInt32Array(0, 589824, 3, 1, 655360, 3, 2, 786432, 3, 3, 851968, 3)
@@ -342,5 +343,8 @@ visible = false
 stream = ExtResource("20_jhlss")
 volume_db = -10.0
 autoplay = true
+
+[node name="fly" parent="." unique_id=1625609137 instance=ExtResource("20_ww6yf")]
+position = Vector2(473, 128)
 
 [editable path="LevelEnd"]

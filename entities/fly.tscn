@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://d3v5kf8mf84t8"]
+
+[ext_resource type="Script" uid="uid://bvxuno06nd0wi" path="res://scripts/Enemy_related/fly.gd" id="1_7f8s3"]
+[ext_resource type="Texture2D" uid="uid://di3bmjfx35ybl" path="res://sprites/5 - Moe Scotty/Sting_Attack_(32 x 32).png" id="2_i83ti"]
+[ext_resource type="Texture2D" uid="uid://dtqmvjf8qxgih" path="res://sprites/5 - Moe Scotty/Hurt_(32 x 32).png" id="3_pxlef"]
+[ext_resource type="Texture2D" uid="uid://b7g7pujmqwg1y" path="res://sprites/5 - Moe Scotty/Flying_(32 x 32).png" id="4_0se4s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hagr3"]
+atlas = ExtResource("2_i83ti")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pir8t"]
+atlas = ExtResource("3_pxlef")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_450ia"]
+atlas = ExtResource("4_0se4s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5et6"]
+atlas = ExtResource("4_0se4s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16b83"]
+atlas = ExtResource("4_0se4s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgtfb"]
+atlas = ExtResource("4_0se4s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hagr3")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pir8t")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_450ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5et6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16b83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgtfb")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 18.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0uvx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ovpp"]
+radius = 120.70211
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxlef"]
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i83ti"]
+
+[node name="fly" type="CharacterBody2D" unique_id=1625609137 groups=["Enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_7f8s3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=332955292]
+sprite_frames = SubResource("SpriteFrames_0i88t")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.9381964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087024939]
+shape = SubResource("CapsuleShape2D_x0uvx")
+
+[node name="PlayerDetector" type="Area2D" parent="." unique_id=981836967]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=180341043]
+shape = SubResource("CircleShape2D_0ovpp")
+debug_color = Color(1, 0.38336733, 0.43168402, 0.41960785)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1014351863]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=670166503]
+shape = SubResource("CapsuleShape2D_pxlef")
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=1914479344]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1149226974]
+shape = SubResource("CapsuleShape2D_i83ti")
+debug_color = Color(1, 0.35561556, 0.45648664, 0.41960785)
