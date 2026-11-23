@@ -300,11 +300,11 @@ animation = &"hurt"
 
 [node name="jump_wav" type="AudioStreamPlayer" parent="." unique_id=891602026]
 stream = ExtResource("10_tjdhl")
-volume_db = -8.0
+volume_db = -22.0
 
 [node name="walk_wav" type="AudioStreamPlayer" parent="." unique_id=599631796]
 stream = ExtResource("11_x08pd")
-volume_db = -8.0
+volume_db = -10.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

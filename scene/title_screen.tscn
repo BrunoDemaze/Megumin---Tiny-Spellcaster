@@ -173,7 +173,7 @@ autoplay = &"reveal"
 
 [node name="main_wav" type="AudioStreamPlayer" parent="." unique_id=759580672]
 stream = ExtResource("6_ulgj7")
-volume_db = -8.0
+volume_db = -12.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits" to="." method="_on_credits_pressed"]

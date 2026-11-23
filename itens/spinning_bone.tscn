@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://7isn0bpcwvmp" path="res://sprites/3 - Skeleton/Spinning_Bone (16 x 16).png" id="1_ecbwy"]
 [ext_resource type="Script" uid="uid://c2q5j5bocrse1" path="res://scripts/Enemy_related/spinning_bone.gd" id="1_qqc7g"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0i88t"]
-radius = 5.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqc7g"]
 atlas = ExtResource("1_ecbwy")
 region = Rect2(0, 0, 16, 16)
@@ -42,20 +39,23 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0i88t"]
+radius = 5.0
+
 [node name="SpinningBone" type="Area2D" unique_id=46569768]
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_qqc7g")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698904347]
-shape = SubResource("CircleShape2D_0i88t")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=882331525]
 sprite_frames = SubResource("SpriteFrames_0i88t")
 autoplay = "default"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698904347]
+shape = SubResource("CircleShape2D_0i88t")
+
 [node name="SelfDestructTimer" type="Timer" parent="." unique_id=697198918]
-wait_time = 8.0
+wait_time = 5.0
 one_shot = true
 autostart = true
 

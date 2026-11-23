@@ -150,7 +150,7 @@ autoplay = &"fade_in"
 
 [node name="over_wav" type="AudioStreamPlayer" parent="." unique_id=1774702000]
 stream = ExtResource("5_ooyig")
-volume_db = -8.0
+volume_db = -10.0
 
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

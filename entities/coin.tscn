@@ -59,4 +59,4 @@ frame_progress = 0.9025643
 
 [node name="coin_wav" type="AudioStreamPlayer" parent="." unique_id=1758756709]
 stream = ExtResource("3_e0yd8")
-volume_db = -8.0
+volume_db = -18.0

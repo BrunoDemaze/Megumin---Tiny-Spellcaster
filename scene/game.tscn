@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://d4if04ie7kuur" path="res://scene/pause_menu.tscn" id="18_ux4dc"]
 [ext_resource type="AudioStream" uid="uid://evew5ghwf4ar" path="res://sounds/566208__awazixosh__its-time-for-an-adventure.wav" id="20_jhlss"]
 [ext_resource type="PackedScene" uid="uid://d3v5kf8mf84t8" path="res://entities/fly.tscn" id="20_ww6yf"]
+[ext_resource type="AudioStream" uid="uid://dga2apdj3gt5y" path="res://sounds/82077__benboncan__fly-1.wav" id="21_ww6yf"]
+[ext_resource type="AudioStream" uid="uid://njrp3hq24lgc" path="res://sounds/632240__audacitier__sick-fly-enemy-dead-sound.mp3" id="22_1it6f"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ym5sv"]
 tile_data = PackedInt32Array(0, 589824, 3, 1, 655360, 3, 2, 786432, 3, 3, 851968, 3)
@@ -337,14 +339,21 @@ position = Vector2(249, -248)
 [node name="HUD" parent="." unique_id=1354084769 instance=ExtResource("17_i6gbm")]
 
 [node name="PauseMenu" parent="." unique_id=2020289742 instance=ExtResource("18_ux4dc")]
-visible = false
 
 [node name="bg_music" type="AudioStreamPlayer" parent="." unique_id=370590519]
 stream = ExtResource("20_jhlss")
-volume_db = -10.0
+volume_db = -12.0
 autoplay = true
 
 [node name="fly" parent="." unique_id=1625609137 instance=ExtResource("20_ww6yf")]
-position = Vector2(473, 128)
+position = Vector2(472, 93)
+
+[node name="flying_wav" type="AudioStreamPlayer" parent="fly" unique_id=1932875252]
+stream = ExtResource("21_ww6yf")
+volume_db = -12.0
+
+[node name="fly_dead_wav" type="AudioStreamPlayer" parent="fly" unique_id=780772563]
+stream = ExtResource("22_1it6f")
+volume_db = -5.0
 
 [editable path="LevelEnd"]

@@ -14,6 +14,8 @@ enum FlyState {
 @onready var player_detector: Area2D = $PlayerDetector
 @onready var attack_shape: CollisionShape2D = $AttackHitbox/CollisionShape2D
 @onready var detector_shape: CollisionShape2D = $PlayerDetector/CollisionShape2D
+@onready var flying_wav: AudioStreamPlayer = $flying_wav
+@onready var fly_dead_wav: AudioStreamPlayer = $fly_dead_wav
 
 # VELOCIDADES
 @export var PATROL_SPEED = 18.0
@@ -45,13 +47,13 @@ var dash_direction = Vector2.ZERO
 var prepare_position: Vector2
 var prepare_direction: Vector2
 
+
 func _ready() -> void:
 
 	start_position = global_position
 
 	attack_shape.set_deferred("disabled", true)
 
-	# Configura o detector
 	player_detector.body_entered.connect(
 		_on_player_detector_body_entered
 	)
@@ -61,6 +63,7 @@ func _ready() -> void:
 	)
 
 	anim.play("fly")
+	
 
 	status = FlyState.patrol
 
@@ -95,14 +98,11 @@ func patrol_state() -> void:
 
 	velocity.x = direction * PATROL_SPEED
 
-	# Pequena movimentação vertical
 	velocity.y = sin(Time.get_ticks_msec() * 0.004) * 10.0
 
-	# Limite direito
 	if global_position.x >= start_position.x + PATROL_DISTANCE:
 		direction = -1
 
-	# Limite esquerdo
 	elif global_position.x <= start_position.x - PATROL_DISTANCE:
 		direction = 1
 
@@ -112,7 +112,6 @@ func patrol_state() -> void:
 # ==================================
 # PREPARAÇÃO DO ATAQUE
 # ==================================
-
 
 func go_to_prepare_state() -> void:
 
@@ -133,7 +132,6 @@ func go_to_prepare_state() -> void:
 
 		update_direction(sign(difference.x))
 
-		# Guarda a posição inicial da preparação
 		prepare_position = global_position
 
 	if anim.sprite_frames.has_animation("attack"):
@@ -148,16 +146,13 @@ func prepare_state(delta: float) -> void:
 		go_to_patrol_state()
 		return
 
-	# Direção contrária ao jogador
 	var backward_direction = -prepare_direction
 
-	# Posição para onde a mosca vai recuar
 	var target_position = (
 		prepare_position +
 		backward_direction * PREPARE_BACK_DISTANCE
 	)
 
-	# Movimenta suavemente para trás
 	global_position = global_position.move_toward(
 		target_position,
 		PREPARE_BACK_SPEED * delta
@@ -185,12 +180,10 @@ func go_to_dash_state() -> void:
 
 	status = FlyState.dash
 
-	# Guarda a direção do jogador no momento do ataque
 	dash_direction = (
 		player.global_position - global_position
 	).normalized()
 
-	# Evita direção nula
 	if dash_direction == Vector2.ZERO:
 		dash_direction = Vector2.RIGHT * direction
 
@@ -209,7 +202,6 @@ func go_to_dash_state() -> void:
 
 func dash_state(delta: float) -> void:
 
-	# Mantém a direção e a velocidade do ataque
 	velocity = dash_direction * DASH_SPEED
 
 	state_timer -= delta
@@ -273,16 +265,19 @@ func _on_player_detector_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player = body
 
+		if not flying_wav.playing:
+			flying_wav.play()
+
 		if status == FlyState.patrol:
 			go_to_prepare_state()
 
 
 func _on_player_detector_body_exited(body: Node2D) -> void:
+
 	if body == player:
 		player = null
+		flying_wav.stop()
 
-		# Só interrompe a perseguição se ainda estiver patrulhando.
-		# Se já começou a preparação, continua o ataque.
 		if status == FlyState.patrol:
 			return
 
@@ -313,22 +308,19 @@ func go_to_dead_state() -> void:
 
 	GameManager.enemy_defeated(50)
 
+	flying_wav.stop()
+	fly_dead_wav.play()
+
 	velocity = Vector2.ZERO
 
 	attack_shape.set_deferred("disabled", true)
 
-	hitbox.set_deferred(
-		"monitoring",
-		false
-	)
-	hitbox.set_deferred(
-		"monitorable",
-		false
-	)
+	hitbox.set_deferred("monitoring", false)
+	hitbox.set_deferred("monitorable", false)
+
 	anim.play("dead")
 
 	print("Mosca derrotada! +50 pontos")
-
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

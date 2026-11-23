@@ -17,7 +17,8 @@ enum PlayerState{
 @onready var jump_wav: AudioStreamPlayer = $jump_wav as AudioStreamPlayer
 @onready var walk_wav: AudioStreamPlayer = $walk_wav
 
-const SPEED = 65.0
+
+const SPEED = 75.0
 const JUMP_VELOCITY = -300.0
 const ORB = preload("res://itens/spell_orbs.tscn")
 
