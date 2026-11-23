@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bbdmcs3lr0nac" path="res://sounds/554825__garuda1982__walking-steps-on-cracked-ice-crust-sound-effect.wav" id="11_x08pd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dp3pk"]
-radius = 7.0
+radius = 6.0
 height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_28s6d"]

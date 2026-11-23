@@ -18,6 +18,8 @@ enum FlyState {
 # VELOCIDADES
 @export var PATROL_SPEED = 18.0
 @export var DASH_SPEED = 150.0
+@export var PREPARE_BACK_DISTANCE = 12.0
+@export var PREPARE_BACK_SPEED = 35.0
 
 # DISTÂNCIA DA PATRULHA
 @export var PATROL_DISTANCE = 100.0
@@ -26,8 +28,8 @@ enum FlyState {
 @export var DETECTION_DISTANCE = 140.0
 
 # TEMPOS
-@export var PREPARE_TIME = 0.45
-@export var DASH_TIME = 0.40
+@export var PREPARE_TIME = 0.35
+@export var DASH_TIME = 0.64
 @export var RECOVER_TIME = 0.7
 
 var status: FlyState
@@ -40,6 +42,8 @@ var player: Node2D = null
 var state_timer = 0.0
 var dash_direction = Vector2.ZERO
 
+var prepare_position: Vector2
+var prepare_direction: Vector2
 
 func _ready() -> void:
 
@@ -109,6 +113,7 @@ func patrol_state() -> void:
 # PREPARAÇÃO DO ATAQUE
 # ==================================
 
+
 func go_to_prepare_state() -> void:
 
 	if status == FlyState.dead:
@@ -120,14 +125,17 @@ func go_to_prepare_state() -> void:
 
 	state_timer = PREPARE_TIME
 
-	# Vira na direção do jogador
 	if is_instance_valid(player):
 
 		var difference = player.global_position - global_position
 
+		prepare_direction = difference.normalized()
+
 		update_direction(sign(difference.x))
 
-	# Toca a animação de ataque, caso exista
+		# Guarda a posição inicial da preparação
+		prepare_position = global_position
+
 	if anim.sprite_frames.has_animation("attack"):
 		anim.play("attack")
 	else:
@@ -136,7 +144,24 @@ func go_to_prepare_state() -> void:
 
 func prepare_state(delta: float) -> void:
 
-	velocity = Vector2.ZERO
+	if not is_instance_valid(player):
+		go_to_patrol_state()
+		return
+
+	# Direção contrária ao jogador
+	var backward_direction = -prepare_direction
+
+	# Posição para onde a mosca vai recuar
+	var target_position = (
+		prepare_position +
+		backward_direction * PREPARE_BACK_DISTANCE
+	)
+
+	# Movimenta suavemente para trás
+	global_position = global_position.move_toward(
+		target_position,
+		PREPARE_BACK_SPEED * delta
+	)
 
 	state_timer -= delta
 
@@ -177,7 +202,7 @@ func go_to_dash_state() -> void:
 
 	attack_shape.set_deferred("disabled", false)
 
-	anim.play("fly")
+	anim.play("attack")
 
 	print("Mosca iniciou a arrancada!")
 
@@ -207,7 +232,7 @@ func go_to_recover_state() -> void:
 
 	attack_shape.set_deferred("disabled", true)
 
-	anim.play("fly")
+	anim.play("fly_slow")
 
 	print("Mosca está se recuperando!")
 
@@ -246,26 +271,20 @@ func go_to_patrol_state() -> void:
 func _on_player_detector_body_entered(body: Node2D) -> void:
 
 	if body.is_in_group("Player"):
-
 		player = body
 
 		if status == FlyState.patrol:
 			go_to_prepare_state()
 
-		print("Mosca detectou o jogador!")
-
 
 func _on_player_detector_body_exited(body: Node2D) -> void:
-
 	if body == player:
-
 		player = null
 
-		# Não interrompe uma arrancada já iniciada
-		if status == FlyState.prepare:
-			go_to_patrol_state()
-
-		print("Mosca perdeu o jogador!")
+		# Só interrompe a perseguição se ainda estiver patrulhando.
+		# Se já começou a preparação, continua o ataque.
+		if status == FlyState.patrol:
+			return
 
 
 # ==================================
@@ -302,20 +321,31 @@ func go_to_dead_state() -> void:
 		"monitoring",
 		false
 	)
-
 	hitbox.set_deferred(
 		"monitorable",
 		false
 	)
-
 	anim.play("dead")
 
 	print("Mosca derrotada! +50 pontos")
 
 
+
 func _on_animated_sprite_2d_animation_finished() -> void:
 
-	if status == FlyState.dead:
+	print("Animação finalizada: ", anim.animation)
+
+	if status != FlyState.dead:
+		return
+
+	if anim.animation == "dead":
+
+		print("Iniciando poof!")
+		anim.play("poof")
+
+	elif anim.animation == "poof":
+
+		print("Mosca desapareceu!")
 		queue_free()
 
 
@@ -325,3 +355,17 @@ func take_damage() -> void:
 		return
 
 	go_to_dead_state()
+
+
+func _on_attack_hitbox_area_entered(area: Area2D) -> void:
+
+	if status != FlyState.dash:
+		return
+
+	if is_queued_for_deletion():
+		return
+
+	var target = area.get_parent()
+
+	if target and target.has_method("take_damage"):
+		target.take_damage()

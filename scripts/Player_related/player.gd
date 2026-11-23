@@ -1,4 +1,3 @@
-
 extends CharacterBody2D
 
 enum PlayerState{
@@ -152,7 +151,7 @@ func go_to_dead_state():
 
 
 func exit_from_duck_state():
-	collision_shape.shape.radius = 7
+	collision_shape.shape.radius = 6
 	collision_shape.shape.height = 18
 	collision_shape.position.y = 1
 

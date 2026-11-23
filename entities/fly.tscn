@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://di3bmjfx35ybl" path="res://sprites/5 - Moe Scotty/Sting_Attack_(32 x 32).png" id="2_i83ti"]
 [ext_resource type="Texture2D" uid="uid://dtqmvjf8qxgih" path="res://sprites/5 - Moe Scotty/Hurt_(32 x 32).png" id="3_pxlef"]
 [ext_resource type="Texture2D" uid="uid://b7g7pujmqwg1y" path="res://sprites/5 - Moe Scotty/Flying_(32 x 32).png" id="4_0se4s"]
+[ext_resource type="Texture2D" uid="uid://cuilaxnpra8p6" path="res://sprites/Mini FX, Items & UI (1)/Mini FX, Items & UI/Effects/Cloud_Poof (16 x 16).png" id="5_i83ti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hagr3"]
 atlas = ExtResource("2_i83ti")
@@ -29,6 +30,54 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("4_0se4s")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i83ti"]
+atlas = ExtResource("4_0se4s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3exx"]
+atlas = ExtResource("4_0se4s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwswf"]
+atlas = ExtResource("4_0se4s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkvx0"]
+atlas = ExtResource("4_0se4s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxlef"]
+atlas = ExtResource("5_i83ti")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0se4s"]
+atlas = ExtResource("5_i83ti")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rr1t"]
+atlas = ExtResource("5_i83ti")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8dgo"]
+atlas = ExtResource("5_i83ti")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq05t"]
+atlas = ExtResource("5_i83ti")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvqnq"]
+atlas = ExtResource("5_i83ti")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkiao"]
+atlas = ExtResource("5_i83ti")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7hfx"]
+atlas = ExtResource("5_i83ti")
+region = Rect2(112, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
 animations = [{
 "frames": [{
@@ -43,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pir8t")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -63,9 +112,57 @@ animations = [{
 "loop": 1,
 "name": &"fly",
 "speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i83ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3exx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwswf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkvx0")
+}],
+"loop": 1,
+"name": &"fly_slow",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxlef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0se4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rr1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8dgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq05t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvqnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkiao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7hfx")
+}],
+"loop": 0,
+"name": &"poof",
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0uvx"]
+radius = 9.0
+height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ovpp"]
 radius = 120.70211
@@ -82,14 +179,15 @@ script = ExtResource("1_7f8s3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=332955292]
 sprite_frames = SubResource("SpriteFrames_0i88t")
-animation = &"fly"
+animation = &"fly_slow"
 autoplay = "fly"
-frame_progress = 0.9381964
+frame_progress = 0.54878193
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087024939]
 shape = SubResource("CapsuleShape2D_x0uvx")
 
 [node name="PlayerDetector" type="Area2D" parent="." unique_id=981836967]
+visible = false
 collision_layer = 0
 collision_mask = 3
 
@@ -98,6 +196,7 @@ shape = SubResource("CircleShape2D_0ovpp")
 debug_color = Color(1, 0.38336733, 0.43168402, 0.41960785)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1014351863]
+visible = false
 collision_layer = 4
 collision_mask = 3
 
@@ -105,9 +204,13 @@ collision_mask = 3
 shape = SubResource("CapsuleShape2D_pxlef")
 
 [node name="AttackHitbox" type="Area2D" parent="." unique_id=1914479344]
+visible = false
 collision_layer = 16
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1149226974]
 shape = SubResource("CapsuleShape2D_i83ti")
 debug_color = Color(1, 0.35561556, 0.45648664, 0.41960785)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_area_entered"]
