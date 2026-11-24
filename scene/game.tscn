@@ -602,13 +602,11 @@ texture = ExtResource("9_b8t8i")
 [sub_resource type="TileSet" id="TileSet_etsbr"]
 sources/0 = SubResource("TileSetAtlasSource_355h4")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_81276"]
-size = Vector2(20, 109)
-
 [node name="Game" type="Node2D" unique_id=479858099]
+metadata/_edit_vertical_guides_ = [2462.0]
 
 [node name="Player" parent="." unique_id=1704222957 instance=ExtResource("1_5kiuu")]
-position = Vector2(58, 166)
+position = Vector2(28, 161)
 
 [node name="tiles" type="Node2D" parent="." unique_id=1727742412]
 
@@ -697,15 +695,11 @@ region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Camera" parent="." unique_id=1034525406 instance=ExtResource("12_sng2h")]
 position = Vector2(58, 166)
-limit_right = 2449
+limit_right = 2462
 
 [node name="LevelEnd" parent="." unique_id=460575457 instance=ExtResource("13_5g16k")]
-position = Vector2(404, 132)
+position = Vector2(2449.5022, 106.99229)
 next_level = "cave"
-
-[node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=1723320643]
-position = Vector2(2045, -60)
-shape = SubResource("RectangleShape2D_81276")
 
 [node name="HUD" parent="." unique_id=1354084769 instance=ExtResource("17_i6gbm")]
 
@@ -1053,5 +1047,3 @@ position = Vector2(2147, 127)
 
 [node name="Skeleton2" parent="mosca" unique_id=1781320338 instance=ExtResource("23_355h4")]
 position = Vector2(2311, 111)
-
-[editable path="LevelEnd"]

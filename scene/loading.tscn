@@ -1,39 +1,40 @@
 [gd_scene format=3 uid="uid://b5wn8wnxv6umw"]
 
-[ext_resource type="Script" uid="uid://cixu51ng03u4y" path="res://scripts/Game_related/loading.gd" id="1_qb5h4"]
-[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="2_bxkk0"]
+[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="1_qb5h4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i88t"]
-bg_color = Color(0.28627452, 0, 0.35686275, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckb4l"]
-bg_color = Color(0.77184176, 0.44506395, 0.9769308, 1)
-
-[node name="Loading" type="Control" unique_id=1967577762]
+[node name="Loading" type="Control" unique_id=1850740599]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qb5h4")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1798934694]
+[node name="bg" type="ColorRect" parent="." unique_id=1099868536]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.047058824, 0.047058824, 0.06666667, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1970067754]
+[node name="text" type="Label" parent="." unique_id=1851453110]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_qb5h4")
+theme_override_font_sizes/font_size = 23
+text = "LOADING..."
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1813690533]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 90.0
-offset_right = 300.0
-offset_bottom = 117.0
-theme_override_fonts/font = ExtResource("2_bxkk0")
-theme_override_font_sizes/font_size = 14
-theme_override_styles/background = SubResource("StyleBoxFlat_0i88t")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ckb4l")
+offset_right = 4.0
+offset_bottom = 27.0
+show_percentage = false
