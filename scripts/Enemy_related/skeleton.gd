@@ -18,7 +18,7 @@ const SPINNING_BONE = preload("res://itens/spinning_bone.tscn")
 @onready var dead_wav: AudioStreamPlayer = $dead_wav
 @onready var sk_attack_wav: AudioStreamPlayer = $sk_attack_wav
 
-const SPEED = 20.0
+const SPEED = 32.0
 const JUMP_VELOCITY = -400.0
 
 var status: SkeletonState
