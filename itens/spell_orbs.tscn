@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://dyh14aur68lfw" path="res://scripts/Player_related/spell_orbs.gd" id="1_kjir0"]
 [ext_resource type="Texture2D" uid="uid://bsfvh64yoid4a" path="res://sprites/2 - Lil Wiz/Magical_Orbs_Spell_(32 x 32).png" id="2_c4fnh"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_kmwvm"]
-radius = 7.0
+radius = 5.0990195
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o808t"]
 atlas = ExtResource("2_c4fnh")
@@ -52,7 +51,9 @@ script = ExtResource("1_kjir0")
 shape = SubResource("CircleShape2D_kmwvm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864433560]
+scale = Vector2(0.71875, 0.75)
 sprite_frames = SubResource("SpriteFrames_i641k")
 animation = &"magic"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

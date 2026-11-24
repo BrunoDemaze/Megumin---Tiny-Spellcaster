@@ -339,6 +339,7 @@ position = Vector2(249, -248)
 [node name="HUD" parent="." unique_id=1354084769 instance=ExtResource("17_i6gbm")]
 
 [node name="PauseMenu" parent="." unique_id=2020289742 instance=ExtResource("18_ux4dc")]
+visible = false
 
 [node name="bg_music" type="AudioStreamPlayer" parent="." unique_id=370590519]
 stream = ExtResource("20_jhlss")

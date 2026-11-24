@@ -2,6 +2,7 @@
 extends Area2D
 
 const SPEED = 100
+const LIFE_TIME = 2.0
 
 var direction = 1
 
@@ -10,6 +11,12 @@ var direction = 1
 
 func _ready() -> void:
 	anim.play("magic")
+
+	# Destrói a magia caso não acerte nada
+	await get_tree().create_timer(LIFE_TIME).timeout
+
+	if not is_queued_for_deletion():
+		queue_free()
 
 
 func set_direction(dir):
@@ -44,4 +51,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 	if enemy != null:
 		enemy.take_damage()
-		queue_free()
+
+	queue_free()

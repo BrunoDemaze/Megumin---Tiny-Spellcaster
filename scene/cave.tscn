@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cht0huet1ye4n" path="res://entities/skeleton.tscn" id="11_xb2vx"]
 [ext_resource type="PackedScene" uid="uid://dkh0740eeoj4t" path="res://entities/bau.tscn" id="12_63wju"]
 [ext_resource type="PackedScene" uid="uid://b43wksibcj1av" path="res://entities/coin.tscn" id="12_whj1w"]
+[ext_resource type="PackedScene" uid="uid://cahwvr6brwe5j" path="res://entities/broken_block.tscn" id="13_63wju"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_4y58e"]
 tile_data = PackedInt32Array(0, 1179648, 11, 1, 1245184, 11, 2, 1310720, 11)
@@ -418,41 +419,80 @@ stream = ExtResource("10_rxggb")
 volume_db = -6.0
 autoplay = true
 
-[node name="Skeleton" parent="." unique_id=1508701746 instance=ExtResource("11_xb2vx")]
+[node name="Inimigos" type="Node2D" parent="." unique_id=1930690459]
+
+[node name="Skeleton" parent="Inimigos" unique_id=1508701746 instance=ExtResource("11_xb2vx")]
 position = Vector2(491, 135)
 
-[node name="Skeleton2" parent="." unique_id=300117235 instance=ExtResource("11_xb2vx")]
-position = Vector2(1014, 55)
+[node name="Skeleton2" parent="Inimigos" unique_id=300117235 instance=ExtResource("11_xb2vx")]
+position = Vector2(1015, 55)
 
-[node name="Skeleton3" parent="." unique_id=199310028 instance=ExtResource("11_xb2vx")]
+[node name="Skeleton3" parent="Inimigos" unique_id=199310028 instance=ExtResource("11_xb2vx")]
 position = Vector2(684, 71)
 
-[node name="coin" parent="." unique_id=892856175 instance=ExtResource("12_whj1w")]
+[node name="Skeleton4" parent="Inimigos" unique_id=722624438 instance=ExtResource("11_xb2vx")]
+position = Vector2(1492, 59)
+
+[node name="Moedas" type="Node2D" parent="." unique_id=1286078004]
+
+[node name="coin" parent="Moedas" unique_id=892856175 instance=ExtResource("12_whj1w")]
 position = Vector2(279, 110)
 
-[node name="coin2" parent="." unique_id=970260103 instance=ExtResource("12_whj1w")]
+[node name="coin2" parent="Moedas" unique_id=970260103 instance=ExtResource("12_whj1w")]
 position = Vector2(754, 30)
 
-[node name="coin3" parent="." unique_id=1069661820 instance=ExtResource("12_whj1w")]
+[node name="coin3" parent="Moedas" unique_id=1069661820 instance=ExtResource("12_whj1w")]
 position = Vector2(787, 29)
 
-[node name="coin4" parent="." unique_id=879835512 instance=ExtResource("12_whj1w")]
+[node name="coin4" parent="Moedas" unique_id=879835512 instance=ExtResource("12_whj1w")]
 position = Vector2(1120, 77)
 
-[node name="coin5" parent="." unique_id=20132140 instance=ExtResource("12_whj1w")]
+[node name="coin5" parent="Moedas" unique_id=20132140 instance=ExtResource("12_whj1w")]
 position = Vector2(1152, 77)
 
-[node name="coin6" parent="." unique_id=548492687 instance=ExtResource("12_whj1w")]
-position = Vector2(1258, 66)
+[node name="coin6" parent="Moedas" unique_id=548492687 instance=ExtResource("12_whj1w")]
+position = Vector2(1249, 66)
 
-[node name="coin7" parent="." unique_id=1408784538 instance=ExtResource("12_whj1w")]
-position = Vector2(1343, 66)
+[node name="coin7" parent="Moedas" unique_id=1408784538 instance=ExtResource("12_whj1w")]
+position = Vector2(1342, 66)
 
-[node name="coin8" parent="." unique_id=310369687 instance=ExtResource("12_whj1w")]
+[node name="coin8" parent="Moedas" unique_id=310369687 instance=ExtResource("12_whj1w")]
 position = Vector2(1459, 66)
 
-[node name="Bau" parent="." unique_id=447655876 instance=ExtResource("12_63wju")]
+[node name="Itens" type="Node2D" parent="." unique_id=634978152]
+
+[node name="Bau" parent="Itens" unique_id=447655876 instance=ExtResource("12_63wju")]
 position = Vector2(854, 63)
 
-[node name="Bau2" parent="." unique_id=80330708 instance=ExtResource("12_63wju")]
+[node name="Bau2" parent="Itens" unique_id=80330708 instance=ExtResource("12_63wju")]
 position = Vector2(1021, -97)
+
+[node name="BrokenBlock" parent="Itens" unique_id=42779376 instance=ExtResource("13_63wju")]
+position = Vector2(1240, 83)
+
+[node name="BrokenBlock10" parent="Itens" unique_id=1351167854 instance=ExtResource("13_63wju")]
+position = Vector2(1256, 83)
+
+[node name="BrokenBlock2" parent="Itens" unique_id=78902778 instance=ExtResource("13_63wju")]
+position = Vector2(1334, 82)
+
+[node name="BrokenBlock9" parent="Itens" unique_id=458592569 instance=ExtResource("13_63wju")]
+position = Vector2(1350, 82)
+
+[node name="BrokenBlock3" parent="Itens" unique_id=1874868081 instance=ExtResource("13_63wju")]
+position = Vector2(1459, 83)
+
+[node name="BrokenBlock4" parent="Itens" unique_id=1770495828 instance=ExtResource("13_63wju")]
+position = Vector2(1443, 83)
+
+[node name="BrokenBlock5" parent="Itens" unique_id=321751220 instance=ExtResource("13_63wju")]
+position = Vector2(1475, 83)
+
+[node name="BrokenBlock6" parent="Itens" unique_id=1441754453 instance=ExtResource("13_63wju")]
+position = Vector2(1491, 83)
+
+[node name="BrokenBlock7" parent="Itens" unique_id=741240533 instance=ExtResource("13_63wju")]
+position = Vector2(1507, 83)
+
+[node name="BrokenBlock8" parent="Itens" unique_id=529867351 instance=ExtResource("13_63wju")]
+position = Vector2(1523, 83)

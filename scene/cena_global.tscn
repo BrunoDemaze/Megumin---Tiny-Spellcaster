@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmlxqowjuh71v"]
+
+[ext_resource type="Script" uid="uid://cl1hrvtqkpadr" path="res://scripts/Game_related/cena_global.gd" id="1_ppnb5"]
+
+[node name="CenaGlobal" type="Node" unique_id=1780061277]
+script = ExtResource("1_ppnb5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=765930081]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=920570888]

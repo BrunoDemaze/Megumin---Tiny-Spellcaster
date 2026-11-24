@@ -40,7 +40,6 @@ var blink_tween: Tween
 var coin_counter = 0
 
 
-
 func _ready() -> void:
 	health = max_health
 	go_to_idle_state()
@@ -167,9 +166,6 @@ func idle_state():
 		go_to_spell_state()
 		return
 
-	if velocity.x != 0:
-		go_to_walk_state()
-		return
 
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
@@ -177,6 +173,10 @@ func idle_state():
 
 	if Input.is_action_pressed("duck"):
 		go_to_duck_state()
+		return
+		
+	if velocity.x != 0:
+		go_to_walk_state()
 		return
 
 
