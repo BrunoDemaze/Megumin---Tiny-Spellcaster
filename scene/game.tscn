@@ -606,7 +606,7 @@ sources/0 = SubResource("TileSetAtlasSource_355h4")
 metadata/_edit_vertical_guides_ = [2462.0]
 
 [node name="Player" parent="." unique_id=1704222957 instance=ExtResource("1_5kiuu")]
-position = Vector2(28, 161)
+position = Vector2(25, 162)
 
 [node name="tiles" type="Node2D" parent="." unique_id=1727742412]
 

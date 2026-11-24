@@ -408,7 +408,7 @@ position = Vector2(11, 26)
 [node name="HUD" parent="." unique_id=1354084769 instance=ExtResource("7_v2lal")]
 
 [node name="Player" parent="." unique_id=1704222957 instance=ExtResource("1_5c32m")]
-position = Vector2(12, 138)
+position = Vector2(22, 139)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1799074929]
 
@@ -430,6 +430,7 @@ limit_right = 4155
 
 [node name="LevelEnd" parent="." unique_id=460575457 instance=ExtResource("5_yoe2l")]
 position = Vector2(4099, 144)
+next_level = "game_over"
 
 [node name="TileMaps" type="Node" parent="." unique_id=427478551]
 

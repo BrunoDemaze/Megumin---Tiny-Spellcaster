@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://b5wn8wnxv6umw"]
 
+[ext_resource type="Script" uid="uid://gqes2dw847sk" path="res://scripts/Game_related/loading.gd" id="1_bxkk0"]
 [ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="1_qb5h4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8t8i"]
+bg_color = Color(0.28627452, 0.03529412, 0.46666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca6q5"]
+bg_color = Color(0.88235295, 0.5568628, 0.96862745, 1)
 
 [node name="Loading" type="Control" unique_id=1850740599]
 layout_mode = 3
@@ -9,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bxkk0")
 
 [node name="bg" type="ColorRect" parent="." unique_id=1099868536]
 layout_mode = 1
@@ -25,16 +33,43 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -50.0
-offset_right = 50.0
-offset_bottom = 23.0
+offset_left = -65.0
+offset_top = 95.0
+offset_right = 79.0
+offset_bottom = 119.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_qb5h4")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 20
 text = "LOADING..."
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1813690533]
-layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 17.0
+offset_right = 150.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_b8t8i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ca6q5")
 show_percentage = false
+
+[node name="Percentage" type="Label" parent="." unique_id=1949366224]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 15.0
+offset_right = 4.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0%"
