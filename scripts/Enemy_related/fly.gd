@@ -310,7 +310,9 @@ func go_to_dead_state() -> void:
 
 	hitbox.set_deferred("monitoring", false)
 	hitbox.set_deferred("monitorable", false)
-
+	
+	fly_dead_wav.play()
+	
 	anim.play("dead")
 
 	print("Mosca derrotada! +50 pontos")
