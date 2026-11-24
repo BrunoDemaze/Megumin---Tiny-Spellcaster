@@ -265,9 +265,6 @@ func _on_player_detector_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player = body
 
-		if not flying_wav.playing:
-			flying_wav.play()
-
 		if status == FlyState.patrol:
 			go_to_prepare_state()
 
@@ -276,7 +273,6 @@ func _on_player_detector_body_exited(body: Node2D) -> void:
 
 	if body == player:
 		player = null
-		flying_wav.stop()
 
 		if status == FlyState.patrol:
 			return
@@ -307,9 +303,6 @@ func go_to_dead_state() -> void:
 	status = FlyState.dead
 
 	GameManager.enemy_defeated(50)
-
-	flying_wav.stop()
-	fly_dead_wav.play()
 
 	velocity = Vector2.ZERO
 

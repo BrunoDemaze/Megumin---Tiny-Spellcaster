@@ -7,4 +7,5 @@ position = Vector2(125, 174)
 limit_left = 0
 limit_bottom = 208
 position_smoothing_enabled = true
+position_smoothing_speed = 9.0
 script = ExtResource("1_ixxe8")

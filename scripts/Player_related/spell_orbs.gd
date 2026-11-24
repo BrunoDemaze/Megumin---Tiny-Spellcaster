@@ -2,7 +2,7 @@
 extends Area2D
 
 const SPEED = 100
-const LIFE_TIME = 2.0
+const LIFE_TIME = 7.0
 
 var direction = 1
 

@@ -81,6 +81,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+	if is_on_floor():
+		jump_count = 0
 
 func go_to_idle_state():
 	status = PlayerState.idle

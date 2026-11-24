@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://0amo2xc6hcme"]
+
+[ext_resource type="Script" uid="uid://cuidw363pc47q" path="res://scripts/Game_related/espinho.gd" id="1_8iin7"]
+[ext_resource type="Texture2D" uid="uid://yd5buomrrqqa" path="res://sprites/Espinho.png" id="2_5xhkb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b1fg"]
+size = Vector2(10, 14)
+
+[node name="Espinho" type="Area2D" unique_id=1779725058 groups=["LethalArea"]]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_8iin7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=930454429]
+texture = ExtResource("2_5xhkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=838201346]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_3b1fg")
