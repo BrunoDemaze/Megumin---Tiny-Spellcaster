@@ -467,6 +467,9 @@ position = Vector2(854, 63)
 [node name="Bau2" parent="Itens" unique_id=80330708 instance=ExtResource("12_63wju")]
 position = Vector2(1021, -97)
 
+[node name="Bau3" parent="Itens" unique_id=1623175316 instance=ExtResource("12_63wju")]
+position = Vector2(1812, 79)
+
 [node name="BrokenBlock" parent="Itens" unique_id=42779376 instance=ExtResource("13_63wju")]
 position = Vector2(1240, 83)
 
