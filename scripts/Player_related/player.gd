@@ -16,6 +16,7 @@ enum PlayerState{
 @onready var hitbox_collision_shape: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var jump_wav: AudioStreamPlayer = $jump_wav as AudioStreamPlayer
 @onready var walk_wav: AudioStreamPlayer = $walk_wav
+@onready var spell_wav: AudioStreamPlayer = $spell_wav
 
 
 const SPEED = 75.0
@@ -220,6 +221,12 @@ func spell_state():
 
 		spell_instance.set_direction(dir)
 		spell_instance.global_position = global_position + Vector2(dir * 15, 0)
+
+		spell_wav.play()
+
+		get_tree().create_timer(1.22).timeout.connect(
+			func(): spell_wav.stop()
+		)
 
 		spell_created = true
 

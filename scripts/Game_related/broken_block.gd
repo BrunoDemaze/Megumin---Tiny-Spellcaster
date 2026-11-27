@@ -4,6 +4,7 @@ extends StaticBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var broken_timer: Timer = $BrokenTimer
 @onready var reset_timer: Timer = $ResetTimer
+@onready var broken_wav: AudioStreamPlayer = $broken_wav
 
 var start_position: Vector2
 var is_broken = false
@@ -27,7 +28,14 @@ func _process(_delta: float) -> void:
 		
 func _on_broken_timer_timeout() -> void:
 	anim.play("falling")
+
+	broken_wav.play()
+	get_tree().create_timer(1.75).timeout.connect(
+		func(): broken_wav.stop()
+	)
+
 	collision_layer = 0
+	
 	var final_position = global_position + Vector2.DOWN * 40
 	var fall_tween = create_tween()
 	fall_tween.set_trans(Tween.TRANS_QUAD)

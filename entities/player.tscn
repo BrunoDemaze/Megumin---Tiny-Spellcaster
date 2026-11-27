@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bm5gpnebrxuaq" path="res://sprites/Pixel Heart Animation GIFs & Spritesheets, 32x32 and 16x16/Pixel Heart Sprite Sheet 16x16.png" id="9_ef06p"]
 [ext_resource type="AudioStream" uid="uid://dohl3hnrqqqg1" path="res://sounds/458641__lilmati__retro-jump-02.wav" id="10_tjdhl"]
 [ext_resource type="AudioStream" uid="uid://bbdmcs3lr0nac" path="res://sounds/554825__garuda1982__walking-steps-on-cracked-ice-crust-sound-effect.wav" id="11_x08pd"]
+[ext_resource type="AudioStream" uid="uid://bu4ocrrscu2cm" path="res://sounds/524305__bertsz__wet-spell-shoot.wav" id="12_dchgp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dp3pk"]
 radius = 6.0
@@ -305,6 +306,10 @@ volume_db = -22.0
 [node name="walk_wav" type="AudioStreamPlayer" parent="." unique_id=599631796]
 stream = ExtResource("11_x08pd")
 volume_db = -10.0
+
+[node name="spell_wav" type="AudioStreamPlayer" parent="." unique_id=1604724531]
+stream = ExtResource("12_dchgp")
+volume_db = -12.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

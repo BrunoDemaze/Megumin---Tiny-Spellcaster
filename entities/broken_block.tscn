@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhbt2haq1njgo" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="1_bypwj"]
 [ext_resource type="Script" uid="uid://bu5gunrtse2fd" path="res://scripts/Game_related/broken_block.gd" id="1_e12t1"]
+[ext_resource type="AudioStream" uid="uid://bdoujlhj53ibc" path="res://sounds/583964__soundsnapfx__sledgehammer-using-to-break-a-block-of-concrete.wav" id="3_31fco"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e12t1"]
 atlas = ExtResource("1_bypwj")
@@ -76,6 +77,10 @@ one_shot = true
 [node name="ResetTimer" type="Timer" parent="." unique_id=1346356681]
 wait_time = 4.0
 one_shot = true
+
+[node name="broken_wav" type="AudioStreamPlayer" parent="." unique_id=1390026352]
+stream = ExtResource("3_31fco")
+volume_db = -10.0
 
 [connection signal="timeout" from="BrokenTimer" to="." method="_on_broken_timer_timeout"]
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

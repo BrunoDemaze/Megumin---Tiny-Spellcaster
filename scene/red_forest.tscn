@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ce26ylwxfbx61"]
+
+[ext_resource type="PackedScene" uid="uid://iow4hsy3tp5f" path="res://entities/player.tscn" id="1_7rr60"]
+[ext_resource type="Texture2D" uid="uid://evt4p3ovcqbe" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="2_xh0fm"]
+[ext_resource type="Texture2D" uid="uid://chyf7r6060jyc" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="3_3l5ln"]
+[ext_resource type="Texture2D" uid="uid://b3ol3b7snweme" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="4_hd63a"]
+[ext_resource type="Texture2D" uid="uid://dpvft1gbhdj42" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="5_xh0fm"]
+[ext_resource type="Texture2D" uid="uid://b8p4spy4u4bm4" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="6_3l5ln"]
+[ext_resource type="PackedScene" uid="uid://dwscrf2m8xjx3" path="res://entities/camera.tscn" id="7_f1m1b"]
+[ext_resource type="PackedScene" uid="uid://dap2fvvtbvyuw" path="res://scene/hud.tscn" id="8_kb6tr"]
+
+[node name="red_forest" type="Node2D" unique_id=996678573]
+
+[node name="Player" parent="." unique_id=1704222957 instance=ExtResource("1_7rr60")]
+
+[node name="tiles" type="Node2D" parent="." unique_id=483637380]
+
+[node name="AutumnForest" type="TileMapLayer" parent="tiles" unique_id=1669571268]
+
+[node name="Decorations" type="TileMapLayer" parent="tiles" unique_id=2130146546]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1620907191]
+
+[node name="5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1646373303]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/5" unique_id=1288500723]
+position = Vector2(0, 1)
+texture = ExtResource("2_xh0fm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=273645395]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/4" unique_id=1911703776]
+position = Vector2(0, 1)
+texture = ExtResource("3_3l5ln")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=77532948]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3" unique_id=1794886917]
+position = Vector2(0, 1)
+texture = ExtResource("4_hd63a")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1889516662]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2" unique_id=372845306]
+position = Vector2(0, 1)
+texture = ExtResource("5_xh0fm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1990152511]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1" unique_id=1700819826]
+position = Vector2(0, 1)
+texture = ExtResource("6_3l5ln")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="Camera" parent="." unique_id=1034525406 instance=ExtResource("7_f1m1b")]
+
+[node name="HUD" parent="." unique_id=1354084769 instance=ExtResource("8_kb6tr")]
+
+[node name="bg_music" type="AudioStreamPlayer" parent="." unique_id=209589442]
