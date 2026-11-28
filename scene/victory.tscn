@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://cc7d7mis76e60"]
+
+[ext_resource type="Script" uid="uid://hhnkxsfds6ga" path="res://scripts/Game_related/game_over.gd" id="1_2g0ok"]
+[ext_resource type="Theme" uid="uid://bl7q5e61neo2i" path="res://Start_screan/default_buttons.tres" id="2_7buwx"]
+[ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="4_5cry7"]
+[ext_resource type="AudioStream" uid="uid://de2wygintui8l" path="res://sounds/274183__littlerobotsoundfactory__jingle_win_synth_04.wav" id="4_fa3o4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0i88t"]
+
+[sub_resource type="Animation" id="Animation_mxr41"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bc2bx"]
+resource_name = "fade_in"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pabp"]
+_data = {
+&"RESET": SubResource("Animation_mxr41"),
+&"fade_in": SubResource("Animation_bc2bx")
+}
+
+[node name="Victory" type="Control" unique_id=1451187150]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2g0ok")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=472750107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_7buwx")
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1821292786]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -42.0
+offset_right = 84.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1583960323]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8411083, 0.8401732, 1.540184e-06, 1)
+theme_override_fonts/font = ExtResource("4_5cry7")
+theme_override_font_sizes/font_size = 17
+text = "YOU WIN!!"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1688180979]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0i88t")
+
+[node name="FinalScore" type="Label" parent="VBoxContainer" unique_id=778322068]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_5cry7")
+theme_override_font_sizes/font_size = 7
+
+[node name="Highscores" type="Label" parent="VBoxContainer" unique_id=704943554]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_5cry7")
+theme_override_font_sizes/font_size = 5
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=1635745033]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0i88t")
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=502727998]
+layout_mode = 2
+theme = ExtResource("2_7buwx")
+theme_override_font_sizes/font_size = 10
+text = "RESTART"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer" unique_id=1101961082]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0i88t")
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=2095270817]
+layout_mode = 2
+theme = ExtResource("2_7buwx")
+theme_override_font_sizes/font_size = 10
+text = "QUIT GAME"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2009976481]
+libraries/ = SubResource("AnimationLibrary_6pabp")
+autoplay = &"fade_in"
+
+[node name="won_wav" type="AudioStreamPlayer" parent="." unique_id=1774702000]
+stream = ExtResource("4_fa3o4")
+volume_db = -12.0
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

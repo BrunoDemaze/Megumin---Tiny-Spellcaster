@@ -430,7 +430,7 @@ limit_right = 4155
 
 [node name="LevelEnd" parent="." unique_id=460575457 instance=ExtResource("5_yoe2l")]
 position = Vector2(4099, 144)
-next_level = "game_over"
+next_level = "red_forest"
 
 [node name="TileMaps" type="Node" parent="." unique_id=427478551]
 

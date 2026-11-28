@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dwscrf2m8xjx3" path="res://entities/camera.tscn" id="7_f1m1b"]
 [ext_resource type="PackedScene" uid="uid://dap2fvvtbvyuw" path="res://scene/hud.tscn" id="8_kb6tr"]
 [ext_resource type="Texture2D" uid="uid://27dvd0a3hj7e" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/0 - Leaf_top.png" id="10_7venm"]
+[ext_resource type="PackedScene" uid="uid://l30ran2145x3" path="res://entities/level_end.tscn" id="12_ibaeu"]
 [ext_resource type="PackedScene" uid="uid://d4if04ie7kuur" path="res://scene/pause_menu.tscn" id="13_ll7kc"]
 [ext_resource type="AudioStream" uid="uid://bjyqareosyw2a" path="res://sounds/680134__seth_makes_sounds__fuzzy-lofi-synth-song.wav" id="14_6xkvj"]
 [ext_resource type="PackedScene" uid="uid://deklkf7gaie05" path="res://entities/goblin.tscn" id="15_3a3un"]
@@ -242,10 +243,13 @@ region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Camera" parent="." unique_id=1034525406 instance=ExtResource("7_f1m1b")]
 
+[node name="LevelEnd" parent="." unique_id=460575457 instance=ExtResource("12_ibaeu")]
+position = Vector2(571, 31)
+final_portal = true
+
 [node name="HUD" parent="." unique_id=1354084769 instance=ExtResource("8_kb6tr")]
 
 [node name="PauseMenu" parent="." unique_id=2020289742 instance=ExtResource("13_ll7kc")]
-visible = false
 
 [node name="red_music" type="AudioStreamPlayer" parent="." unique_id=209589442]
 stream = ExtResource("14_6xkvj")
