@@ -30,8 +30,8 @@ func _physics_process(delta: float) -> void:
 func set_direction(new_direction: int) -> void:
 
 	direction = new_direction
-	anim.flip_h = direction > 0
-	smoke.flip_h = direction > 0
+	if direction < 0:
+		scale.x *= -1
 
 
 func _on_body_entered(body: Node2D) -> void:

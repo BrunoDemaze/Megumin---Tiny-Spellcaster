@@ -55,7 +55,8 @@ animation = &"throw"
 flip_h = true
 
 [node name="smoke" type="AnimatedSprite2D" parent="." unique_id=2134623875]
-position = Vector2(-14, 0)
+position = Vector2(-22, -1)
+rotation = 3.1415927
 scale = Vector2(0.625, 0.5625)
 sprite_frames = SubResource("SpriteFrames_0i88t")
 animation = &"cloud"

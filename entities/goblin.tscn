@@ -48,6 +48,14 @@ region = Rect2(0, 0, 64, 32)
 atlas = ExtResource("1_h3ru8")
 region = Rect2(0, 0, 64, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pw33"]
+atlas = ExtResource("1_j72d2")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajrcd"]
+atlas = ExtResource("1_j72d2")
+region = Rect2(64, 0, 64, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_imdhl"]
 atlas = ExtResource("2_j72d2")
 region = Rect2(0, 0, 64, 32)
@@ -118,6 +126,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_3pw33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajrcd")
+}],
+"loop": 1,
+"name": &"lance_throw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_imdhl")
 }, {
 "duration": 1.0,
@@ -158,7 +177,7 @@ shape = SubResource("CapsuleShape2D_3si4x")
 position = Vector2(0, -1)
 scale = Vector2(0.984375, 1)
 sprite_frames = SubResource("SpriteFrames_0i88t")
-animation = &"walk"
+animation = &"lance_throw"
 flip_h = true
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1717741961]
@@ -180,14 +199,14 @@ target_position = Vector2(0, 17)
 
 [node name="PlayerDetector" type="RayCast2D" parent="." unique_id=836844129]
 position = Vector2(-3, 7)
-target_position = Vector2(250, 0)
+target_position = Vector2(190, 0)
 collision_mask = 2
 
 [node name="LanceStartPosition" type="Node2D" parent="." unique_id=496747488]
 position = Vector2(1, 0)
 
 [node name="lance" parent="LanceStartPosition" unique_id=1858348327 instance=ExtResource("6_6u02j")]
-position = Vector2(20, 4)
+position = Vector2(25, 2)
 
 [node name="gob_dead_wav" type="AudioStreamPlayer" parent="." unique_id=175393365]
 stream = ExtResource("5_cse0j")
