@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4s5l6c6lpbw8" path="res://sprites/6 - Orc/Walking_(64 x 32).png" id="2_j72d2"]
 [ext_resource type="Texture2D" uid="uid://dtvackyjlmy8s" path="res://sprites/6 - Orc/Falling_(64 x 32).png" id="2_oydvp"]
 [ext_resource type="AudioStream" uid="uid://dq0e47i74e6ru" path="res://sounds/249813__spookymodem__goblin-death.wav" id="5_cse0j"]
+[ext_resource type="PackedScene" uid="uid://bsrehbwoukkdt" path="res://entities/lance.tscn" id="6_6u02j"]
 [ext_resource type="AudioStream" uid="uid://bf74ohk37igvl" path="res://sounds/209073__lukesharples__blade-slice2.wav" id="6_jct7v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3si4x"]
@@ -143,7 +144,7 @@ animations = [{
 size = Vector2(17, 21)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0i88t"]
-radius = 20.0
+radius = 25.0
 
 [node name="goblin" type="CharacterBody2D" unique_id=1045416060]
 collision_layer = 4
@@ -179,10 +180,14 @@ target_position = Vector2(0, 17)
 
 [node name="PlayerDetector" type="RayCast2D" parent="." unique_id=836844129]
 position = Vector2(-3, 7)
-target_position = Vector2(121, 0)
+target_position = Vector2(250, 0)
 collision_mask = 2
 
 [node name="LanceStartPosition" type="Node2D" parent="." unique_id=496747488]
+position = Vector2(1, 0)
+
+[node name="lance" parent="LanceStartPosition" unique_id=1858348327 instance=ExtResource("6_6u02j")]
+position = Vector2(20, 4)
 
 [node name="gob_dead_wav" type="AudioStreamPlayer" parent="." unique_id=175393365]
 stream = ExtResource("5_cse0j")

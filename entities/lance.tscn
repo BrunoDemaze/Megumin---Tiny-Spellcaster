@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bsrehbwoukkdt"]
+
+[ext_resource type="Script" uid="uid://prgio7nq45ry" path="res://scripts/Enemy_related/lance.gd" id="1_7dsm0"]
+[ext_resource type="Texture2D" uid="uid://bh5kq3p707lfb" path="res://itens/lance(32x16).png" id="2_7oktp"]
+[ext_resource type="Texture2D" uid="uid://cuilaxnpra8p6" path="res://sprites/Mini FX, Items & UI (1)/Mini FX, Items & UI/Effects/Cloud_Poof (16 x 16).png" id="3_udvbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvt0q"]
+atlas = ExtResource("2_7oktp")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckb4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvt0q")
+}],
+"loop": 0,
+"name": &"throw",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unuc7"]
+atlas = ExtResource("3_udvbh")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl38x"]
+atlas = ExtResource("3_udvbh")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i88t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unuc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl38x")
+}],
+"loop": 1,
+"name": &"cloud",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i88t"]
+size = Vector2(7.5, 5.5)
+
+[node name="lance" type="Area2D" unique_id=1858348327]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_7dsm0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=997112359]
+sprite_frames = SubResource("SpriteFrames_ckb4l")
+animation = &"throw"
+flip_h = true
+
+[node name="smoke" type="AnimatedSprite2D" parent="." unique_id=2134623875]
+position = Vector2(-14, 0)
+scale = Vector2(0.625, 0.5625)
+sprite_frames = SubResource("SpriteFrames_0i88t")
+animation = &"cloud"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=657726772]
+position = Vector2(7.25, -0.75)
+shape = SubResource("RectangleShape2D_0i88t")
