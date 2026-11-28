@@ -23,6 +23,11 @@ func _on_body_entered(body: Node2D) -> void:
 
 func load_next_scene() -> void:
 
+	if final_portal:
+		GameManager.finish_run()
+		get_tree().change_scene_to_file("res://scene/victory.tscn")
+		return
+
 	var old_scene = get_tree().current_scene
 
 	var loading = LOADING_SCREEN.instantiate()
@@ -31,8 +36,4 @@ func load_next_scene() -> void:
 	get_tree().current_scene = loading
 	old_scene.queue_free()
 
-	if final_portal:
-		GameManager.finish_run()
-		loading.start_loading("res://scene/victory.tscn")
-	else:
-		loading.start_loading("res://scene/" + next_level + ".tscn")
+	loading.start_loading("res://scene/" + next_level + ".tscn")

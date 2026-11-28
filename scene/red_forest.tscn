@@ -143,7 +143,7 @@ sources/0 = SubResource("TileSetAtlasSource_ll7kc")
 [node name="red_forest" type="Node2D" unique_id=996678573]
 
 [node name="Player" parent="." unique_id=1704222957 instance=ExtResource("1_7rr60")]
-position = Vector2(2655, 148)
+position = Vector2(43, 166)
 
 [node name="tiles" type="Node2D" parent="." unique_id=483637380]
 
@@ -156,7 +156,6 @@ tile_map_data = PackedByteArray("AAABAAkAAAABAAEAAAAJAAQAAAABAAUAAAAKAAQAAAADAAU
 tile_set = SubResource("TileSet_hvcet")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1620907191]
-visible = false
 
 [node name="6" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1317056212]
 motion_scale = Vector2(0.1, 0.1)
@@ -253,7 +252,6 @@ final_portal = true
 [node name="HUD" parent="." unique_id=1354084769 instance=ExtResource("8_kb6tr")]
 
 [node name="PauseMenu" parent="." unique_id=2020289742 instance=ExtResource("13_ll7kc")]
-visible = false
 
 [node name="red_music" type="AudioStreamPlayer" parent="." unique_id=209589442]
 stream = ExtResource("14_6xkvj")

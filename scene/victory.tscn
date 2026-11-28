@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cc7d7mis76e60"]
 
-[ext_resource type="Script" uid="uid://hhnkxsfds6ga" path="res://scripts/Game_related/game_over.gd" id="1_2g0ok"]
+[ext_resource type="Script" uid="uid://b140igqiu2e57" path="res://scripts/Game_related/victory.gd" id="1_fa3o4"]
 [ext_resource type="Theme" uid="uid://bl7q5e61neo2i" path="res://Start_screan/default_buttons.tres" id="2_7buwx"]
 [ext_resource type="FontFile" uid="uid://d165f3fwqgkci" path="res://Start_screan/fonts/PeaberryDoublespace.ttf" id="4_5cry7"]
 [ext_resource type="AudioStream" uid="uid://de2wygintui8l" path="res://sounds/274183__littlerobotsoundfactory__jingle_win_synth_04.wav" id="4_fa3o4"]
@@ -75,7 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2g0ok")
+script = ExtResource("1_fa3o4")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=472750107]
 layout_mode = 1
