@@ -691,7 +691,7 @@ position = Vector2(2504, 159)
 
 [node name="Espinho6" parent="Itens" unique_id=1170500634 instance=ExtResource("14_4y58e")]
 z_index = 1
-position = Vector2(2520, 159)
+position = Vector2(2521, 159)
 
 [node name="Espinho7" parent="Itens" unique_id=1459365603 instance=ExtResource("14_4y58e")]
 z_index = 1
